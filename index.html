@@ -1,0 +1,666 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-[#111c22] dark group/design-root overflow-x-hidden"
+      style='--select-button-svg: url(&apos;data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(146,183,201)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e&apos;); font-family: "Space Grotesk", "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] px-10 py-3">
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"
+                  fill="currentColor"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">PromptCraft</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">Image Prompts</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">Video Prompts</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">Examples</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">Tips</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">Glossary</a>
+            </div>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Get Started</span>
+            </button>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBu4_cQfA60Q5dSHouvbCic3iVx4lt1ZVieAWWuVEwkTA312YckX8wAxW51V-GlWGnzQ87aUMPac00cpj7hav5vPHdjBwKO02AoePTx0_CbHmfYpILsLhGAAOYvh8XQFIUquAKxrU6qzKxW_Wluyy0OFojvfPsoSrHrt0EjBv2jyBHHhCaQPaILVf1a939hWqxLzri25LUX0xXZC57cduUIdpHDhHAMtYhd6JBdFJfN4pVNovRDDJeL5RYu80ORDshvpbQtLvuGn40");'
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Master the Art of AI Visual Prompting
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      Unlock the power of precise prompts to create stunning images and videos. Learn the techniques, tips, and keywords to bring your visual concepts to life.
+                    </h2>
+                  </div>
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  >
+                    <span class="truncate">Explore Tutorials</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Template Generator</h2>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Output Type</p>
+                <select
+                  id="outputType"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                  onchange="updateFormFields()"
+                >
+                  <option value="image">Image Generation</option>
+                  <option value="video">Video Generation</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2" id="styleLabel">Art Style</p>
+                <select
+                  id="styleSelect"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="">Select a style</option>
+                  <option value="photorealistic">Photorealistic</option>
+                  <option value="digital-art">Digital Art</option>
+                  <option value="oil-painting">Oil Painting</option>
+                  <option value="watercolor">Watercolor</option>
+                  <option value="sketch">Sketch/Drawing</option>
+                  <option value="anime">Anime/Manga</option>
+                  <option value="3d-render">3D Render</option>
+                  <option value="vintage">Vintage Photography</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Subject</p>
+                <select
+                  id="subjectSelect"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="portrait">Portrait (Person)</option>
+                  <option value="landscape">Landscape</option>
+                  <option value="animal">Animal/Pet</option>
+                  <option value="architecture">Architecture/Building</option>
+                  <option value="object">Object/Product</option>
+                  <option value="fantasy-character">Fantasy Character</option>
+                  <option value="vehicle">Vehicle</option>
+                  <option value="abstract">Abstract Concept</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2" id="actionLabel">Pose/Composition</p>
+                <select
+                  id="actionSelect"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="">Select pose/composition</option>
+                  <option value="standing">Standing pose</option>
+                  <option value="sitting">Sitting pose</option>
+                  <option value="walking">Walking</option>
+                  <option value="looking-away">Looking away</option>
+                  <option value="smiling">Smiling</option>
+                  <option value="dramatic-pose">Dramatic pose</option>
+                  <option value="rule-of-thirds">Rule of thirds</option>
+                  <option value="centered">Centered composition</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Environment/Background</p>
+                <select
+                  id="environmentSelect"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="">Select environment</option>
+                  <option value="studio">Studio background</option>
+                  <option value="nature">Natural outdoor</option>
+                  <option value="urban">Urban/City</option>
+                  <option value="indoor">Indoor/Interior</option>
+                  <option value="fantasy">Fantasy landscape</option>
+                  <option value="minimalist">Minimalist/Clean</option>
+                  <option value="bokeh">Blurred/Bokeh</option>
+                  <option value="sunset">Golden hour/Sunset</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Mood/Atmosphere</p>
+                <select
+                  id="moodSelect"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="">Select mood</option>
+                  <option value="bright-cheerful">Bright & Cheerful</option>
+                  <option value="dark-moody">Dark & Moody</option>
+                  <option value="warm-cozy">Warm & Cozy</option>
+                  <option value="cool-calm">Cool & Calm</option>
+                  <option value="dramatic">Dramatic</option>
+                  <option value="ethereal">Ethereal/Dreamy</option>
+                  <option value="vintage">Vintage/Nostalgic</option>
+                  <option value="professional">Professional/Clean</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3" id="qualityField">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Quality/Resolution</p>
+                <select
+                  id="qualitySelect"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] h-14 bg-[image:--select-button-svg] placeholder:text-[#92b7c9] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="">Select quality</option>
+                  <option value="4k-ultra">4K Ultra HD</option>
+                  <option value="high-detail">High detail</option>
+                  <option value="sharp-focus">Sharp focus</option>
+                  <option value="professional">Professional quality</option>
+                  <option value="masterpiece">Masterpiece quality</option>
+                  <option value="award-winning">Award winning</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Generated Prompt</p>
+                <div class="flex w-full flex-1 items-stretch rounded-lg">
+                  <textarea
+                    id="generatedPrompt"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#325567] bg-[#192b33] focus:border-[#325567] placeholder:text-[#92b7c9] p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal"
+                    rows="3"
+                    placeholder="Your prompt will appear here..."
+                    readonly
+                  ></textarea>
+                  <button
+                    class="text-[#92b7c9] flex border border-[#325567] bg-[#192b33] items-center justify-center pr-[15px] pl-[15px] rounded-r-lg border-l-0 hover:text-white hover:bg-[#233c48] transition-colors"
+                    onclick="copyToClipboard()"
+                    title="Copy to clipboard"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <button
+                onclick="generatePrompt()"
+                class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#1193d4] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#0d7db0] transition-colors"
+              >
+                <span class="truncate">Generate Prompt</span>
+              </button>
+              <button
+                onclick="clearForm()"
+                class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#233c48] text-white text-base font-medium leading-normal tracking-[0.015em] hover:bg-[#325567] transition-colors"
+              >
+                <span class="truncate">Clear All</span>
+              </button>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Examples of Professional Prompts</h2>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-lg">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-white text-base font-bold leading-tight">Image Prompt: Professional Portrait</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
+                    "Professional headshot of a confident businesswoman, natural lighting, sharp focus, clean studio background, photorealistic, high detail, 4K quality"
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAP8ESkzyLm02qr5lEHR4IaPLUFJ2rSkqRq5MbZxdK4hSRUoxSUPGmKpPCO2HZAG47UgOVz7w5av8ftqHpzvr1gr_hnynRvaaofAmnKE4yPczZPJNUp9Um2gNgYj-_TtK8XaVuLAhTEat_MQ1lYV4mo1VLUHOx2Iyhkbdxq0PvMYgIMr71tSbblkYdt42MeQrDNxcdTvexT8qAFwOg9ExhyW0_UdN2h96Kx9-7tz68wA8t8_iiY6bJf8ju3UA1szKmYZhPDdOlAWw");'
+                ></div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-lg">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-white text-base font-bold leading-tight">Video Prompt: Cinematic Cityscape</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
+                    Create a cinematic cityscape at night, featuring neon lights reflecting on wet streets, with a lone figure walking under a streetlamp. Use keywords like
+                    'night', 'cityscape', 'neon lights', 'wet streets', 'streetlamp', 'cinematic lighting'.
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_MvunaYHpCnEDR3fPjnYFB6ZfAD-q_dThWDFNJN72ET4fI9ZGo_217vsFp0vBEe-06Qrn2BQNE3E_1HHbvCh9uS-ngTRcn58rHaPuHoAW62Ondd5xK5NGoMoS4uofZhVpDtSA8c39z_zwxbTOnFLyuClhyLiMKX2gHSK6kkklGFTReyDrUNN_hBMNj0rKkgHrCmVV8ytQ430a4B6RO9YzFqb2k8rpPYhQ-946Bs7M7GArClYSzqIKOczEnlPY0hpHj-ArQ7mFRBk");'
+                ></div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-lg">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-white text-base font-bold leading-tight">Image Prompt: Fantasy Digital Art</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
+                    "Digital art of a majestic dragon soaring over a mystical forest, ethereal lighting, fantasy landscape, detailed scales, magical atmosphere, award-winning quality"
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAP8ESkzyLm02qr5lEHR4IaPLUFJ2rSkqRq5MbZxdK4hSRUoxSUPGmKpPCO2HZAG47UgOVz7w5av8ftqHpzvr1gr_hnynRvaaofAmnKE4yPczZPJNUp9Um2gNgYj-_TtK8XaVuLAhTEat_MQ1lYV4mo1VLUHOx2Iyhkbdxq0PvMYgIMr71tSbblkYdt42MeQrDNxcdTvexT8qAFwOg9ExhyW0_UdN2h96Kx9-7tz68wA8t8_iiY6bJf8ju3UA1szKmYZhPDdOlAWw");'
+                ></div>
+              </div>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Professional Tips for Effective Prompts</h2>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">Enhance your visual prompts with these professional tips:</p>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Lighting Techniques</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Use specific lighting terms like 'golden hour', 'soft box lighting', 'rim lighting', or 'dramatic shadows' for better results.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Camera Angles & Composition</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Specify angles like 'wide shot', 'close-up', 'low angle', or composition rules like 'rule of thirds', 'centered composition'.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Style & Quality Descriptors</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Include quality terms like 'high detail', 'photorealistic', '4K', 'award-winning', or style terms like 'digital art', 'oil painting'.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Subject Description</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Be specific about subject details including pose, expression, clothing, and physical characteristics for accurate representation.
+                </p>
+              </div>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Glossary of Keywords for Expressions and Gestures</h2>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-lg border border-[#325567] bg-[#111c22]">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-[#192b33]">
+                      <th class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">Keyword</th>
+                      <th class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#325567]">
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">Surprised</td>
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240 h-[72px] px-4 py-2 w-[400px] text-[#92b7c9] text-sm font-normal leading-normal">
+                        Character shows a sudden, unexpected reaction with wide eyes and raised eyebrows.
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#325567]">
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">Comforting</td>
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240 h-[72px] px-4 py-2 w-[400px] text-[#92b7c9] text-sm font-normal leading-normal">
+                        Character offers support or reassurance through gentle gestures and a calm demeanor.
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#325567]">
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">Excited</td>
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240 h-[72px] px-4 py-2 w-[400px] text-[#92b7c9] text-sm font-normal leading-normal">
+                        Character displays enthusiasm and energy with animated movements and a joyful expression.
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#325567]">
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">Thoughtful</td>
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240 h-[72px] px-4 py-2 w-[400px] text-[#92b7c9] text-sm font-normal leading-normal">
+                        Character appears to be in deep contemplation, often with a furrowed brow and a focused gaze.
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#325567]">
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">Disappointed</td>
+                      <td class="table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240 h-[72px] px-4 py-2 w-[400px] text-[#92b7c9] text-sm font-normal leading-normal">
+                        Character shows sadness or dissatisfaction with slumped posture and a downcast expression.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-120{display: none;}}
+                @container(max-width:240px){.table-aeb29a0d-80c5-4616-b7d7-714ce378d62d-column-240{display: none;}}
+              </style>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Negative Prompts and Examples</h2>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Negative prompts help refine your visuals by specifying elements to avoid. Here are some examples:
+            </p>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Image Quality Issues</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Exclude: 'blurry', 'low resolution', 'pixelated', 'poor quality', 'distorted', 'artifacts' to ensure crisp results.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Unwanted Elements</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Avoid unwanted features by specifying 'no watermarks', 'no text', 'no logos', 'no extra limbs', 'no duplicates'.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-white text-base font-medium leading-normal line-clamp-1">Style Exclusions</p>
+                <p class="text-[#92b7c9] text-sm font-normal leading-normal line-clamp-2">
+                  Control style by excluding 'cartoon style', 'anime style', 'black and white' when you want photorealistic results.
+                </p>
+              </div>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Community Prompts</h2>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">Explore prompts submitted by our community members and share your own successful examples.</p>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-lg">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-white text-base font-bold leading-tight">Prompt: A lone astronaut on a desolate planet</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
+                    Description: A video depicting a lone astronaut exploring a barren, rocky planet with a distant, colorful nebula in the sky.
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAXbZfuezntu5X-Gwy8pkg7VL9cNRPPagHcQUmvoicGnP5QL9vu7zDmORku2u4B4Jm_c-GnovzuPaYYP6uDsm3CoI2orMyEjOYZXqN0GMdRwgrBaDKdomY77ay7M1yC4rJostw5xuumSIvqQHGUZoTqhtm1jIPzIxOWRGmwUiElcbdsVayk3-XD9kInBFyN_CZOFlf9J-UO-oIx9qMllzWM4yrYhGN3LV7plqCptykHVhCJfFG4agidCM2-lx83aPmQHpPVSxhI-o");'
+                ></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 px-4 py-2 py-2">
+              <div class="flex items-center justify-center gap-2 px-3 py-2">
+                <div class="text-[#92b7c9]" data-icon="ThumbsUp" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-[#92b7c9] text-[13px] font-bold leading-normal tracking-[0.015em]">125</p>
+              </div>
+              <div class="flex items-center justify-center gap-2 px-3 py-2">
+                <div class="text-[#92b7c9]" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-[#92b7c9] text-[13px] font-bold leading-normal tracking-[0.015em]">32</p>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-lg">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-white text-base font-bold leading-tight">Prompt: A bustling marketplace in a fantasy city</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
+                    Description: A video showcasing a vibrant marketplace in a fantasy city, filled with diverse characters, exotic goods, and lively interactions.
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSqV3uowpsSJiscbgwOIVh6gewSE-qc9t5eaHUlGuQf_seMEkNdHUD-BgIz3owqIUiJOyukYuhgaaRnJkitXausEfddSkkDLqk7xCz7-Hiset-cUyRxwXScuE3rDOZM1spgBQz_CSospvzkzBaud_XIz15FoR4oeQAKE4oSbMoG9ePV10h_u9ogyxAu62oqRjNPhEF_VzkwuzhNEnWhlbPWmtA9XjpBN4qF5VrMJunJ6JrsQiCjiQ0AkrjMnq1TVcMFCPqkS1LuXM");'
+                ></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 px-4 py-2 py-2">
+              <div class="flex items-center justify-center gap-2 px-3 py-2">
+                <div class="text-[#92b7c9]" data-icon="ThumbsUp" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-[#92b7c9] text-[13px] font-bold leading-normal tracking-[0.015em]">98</p>
+              </div>
+              <div class="flex items-center justify-center gap-2 px-3 py-2">
+                <div class="text-[#92b7c9]" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-[#92b7c9] text-[13px] font-bold leading-normal tracking-[0.015em]">15</p>
+              </div>
+            </div>
+            <div class="flex px-4 py-3 justify-center">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#233c48] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Submit Your Prompt</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Function to update form fields based on output type
+      function updateFormFields() {
+        const outputType = document.getElementById('outputType').value;
+        const styleLabel = document.getElementById('styleLabel');
+        const actionLabel = document.getElementById('actionLabel');
+        const styleSelect = document.getElementById('styleSelect');
+        const actionSelect = document.getElementById('actionSelect');
+        const qualityField = document.getElementById('qualityField');
+
+        if (outputType === 'video') {
+          styleLabel.textContent = 'Video Style';
+          actionLabel.textContent = 'Actions';
+          qualityField.style.display = 'none';
+          
+          // Update style options for video
+          styleSelect.innerHTML = `
+            <option value="">Select a style</option>
+            <option value="cinematic">Cinematic</option>
+            <option value="documentary">Documentary</option>
+            <option value="animated">Animated</option>
+            <option value="time-lapse">Time-lapse</option>
+            <option value="slow-motion">Slow Motion</option>
+            <option value="handheld">Handheld</option>
+            <option value="aerial">Aerial/Drone</option>
+          `;
+          
+          // Update action options for video
+          actionSelect.innerHTML = `
+            <option value="">Select actions</option>
+            <option value="walking">Walking</option>
+            <option value="running">Running</option>
+            <option value="dancing">Dancing</option>
+            <option value="talking">Talking</option>
+            <option value="working">Working</option>
+            <option value="interacting">Interacting</option>
+            <option value="moving">Moving objects</option>
+          `;
+        } else {
+          styleLabel.textContent = 'Art Style';
+          actionLabel.textContent = 'Pose/Composition';
+          qualityField.style.display = 'flex';
+          
+          // Update style options for image
+          styleSelect.innerHTML = `
+            <option value="">Select a style</option>
+            <option value="photorealistic">Photorealistic</option>
+            <option value="digital-art">Digital Art</option>
+            <option value="oil-painting">Oil Painting</option>
+            <option value="watercolor">Watercolor</option>
+            <option value="sketch">Sketch/Drawing</option>
+            <option value="anime">Anime/Manga</option>
+            <option value="3d-render">3D Render</option>
+            <option value="vintage">Vintage Photography</option>
+          `;
+          
+          // Update action options for image
+          actionSelect.innerHTML = `
+            <option value="">Select pose/composition</option>
+            <option value="standing">Standing pose</option>
+            <option value="sitting">Sitting pose</option>
+            <option value="walking">Walking</option>
+            <option value="looking-away">Looking away</option>
+            <option value="smiling">Smiling</option>
+            <option value="dramatic-pose">Dramatic pose</option>
+            <option value="rule-of-thirds">Rule of thirds</option>
+            <option value="centered">Centered composition</option>
+          `;
+        }
+      }
+
+      // Function to generate prompt
+      function generatePrompt() {
+        const outputType = document.getElementById('outputType').value;
+        const style = document.getElementById('styleSelect').value;
+        const subject = document.getElementById('subjectSelect').value;
+        const action = document.getElementById('actionSelect').value;
+        const environment = document.getElementById('environmentSelect').value;
+        const mood = document.getElementById('moodSelect').value;
+        const quality = document.getElementById('qualitySelect')?.value || '';
+
+        let prompt = '';
+        let parts = [];
+
+        // Add style
+        if (style) {
+          parts.push(style.replace('-', ' '));
+        }
+
+        // Add subject
+        if (subject) {
+          parts.push(subject.replace('-', ' '));
+        }
+
+        // Add action/pose
+        if (action) {
+          parts.push(action.replace('-', ' '));
+        }
+
+        // Add environment
+        if (environment) {
+          parts.push(environment.replace('-', ' ') + ' background');
+        }
+
+        // Add mood
+        if (mood) {
+          parts.push(mood.replace('-', ' ') + ' atmosphere');
+        }
+
+        // Add quality for images
+        if (outputType === 'image' && quality) {
+          parts.push(quality.replace('-', ' '));
+        }
+
+        // Join all parts
+        prompt = parts.join(', ');
+
+        // Add professional finishing touches
+        if (outputType === 'image') {
+          if (prompt) prompt += ', ';
+          prompt += 'highly detailed, professional lighting, sharp focus';
+        } else {
+          if (prompt) prompt += ', ';
+          prompt += 'smooth camera movement, professional cinematography';
+        }
+
+        document.getElementById('generatedPrompt').value = prompt;
+      }
+
+      // Function to copy to clipboard
+      function copyToClipboard() {
+        const promptField = document.getElementById('generatedPrompt');
+        promptField.select();
+        promptField.setSelectionRange(0, 99999); // For mobile devices
+        
+        try {
+          document.execCommand('copy');
+          // Visual feedback
+          const button = event.target.closest('button');
+          const originalColor = button.style.color;
+          button.style.color = '#1193d4';
+          setTimeout(() => {
+            button.style.color = originalColor;
+          }, 300);
+        } catch (err) {
+          console.error('Failed to copy text: ', err);
+        }
+      }
+
+      // Function to clear form
+      function clearForm() {
+        document.getElementById('styleSelect').value = '';
+        document.getElementById('subjectSelect').value = '';
+        document.getElementById('actionSelect').value = '';
+        document.getElementById('environmentSelect').value = '';
+        document.getElementById('moodSelect').value = '';
+        if (document.getElementById('qualitySelect')) {
+          document.getElementById('qualitySelect').value = '';
+        }
+        document.getElementById('generatedPrompt').value = '';
+      }
+
+      // Auto-generate prompt when fields change
+      document.addEventListener('DOMContentLoaded', function() {
+        const selects = ['outputType', 'styleSelect', 'subjectSelect', 'actionSelect', 'environmentSelect', 'moodSelect', 'qualitySelect'];
+        
+        selects.forEach(id => {
+          const element = document.getElementById(id);
+          if (element) {
+            element.addEventListener('change', generatePrompt);
+          }
+        });
+
+        // Initialize form
+        updateFormFields();
+      });
+    </script>
+  </body>
+</html>
