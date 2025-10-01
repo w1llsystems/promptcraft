@@ -38,30 +38,24 @@
             <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">PromptCraft</h2>
           </div>
           <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Image Prompts</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Video Prompts</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Examples</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Tips</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#">Glossary</a>
-            </div>
-            <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-            >
-              <span class="truncate">Get Started</span>
-            </button>
+            <nav class="flex items-center gap-9">
+              <a class="text-white text-sm font-medium leading-normal" href="#home">Home</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#image-prompts">Image Prompts</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#video-prompts">Video Prompts</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#examples">Examples</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#tips">Tips</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#glossary">Glossary</a>
+            </nav>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
+        <div id="home" class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="@container">
               <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBu4_cQfA60Q5dSHouvbCic3iVx4lt1ZVieAWWuVEwkTA312YckX8wAxW51V-GlWGnzQ87aUMPac00cpj7hav5vPHdjBwKO02AoePTx0_CbHmfYpILsLhGAAOYvh8XQFIUquAKxrU6qzKxW_Wluyy0OFojvfPsoSrHrt0EjBv2jyBHHhCaQPaILVf1a939hWqxLzri25LUX0xXZC57cduUIdpHDhHAMtYhd6JBdFJfN4pVNovRDDJeL5RYu80ORDshvpbQtLvuGn40");'
-                >
-                  <div class="flex flex-col gap-2 text-center">
+                <div class="relative overflow-hidden flex min-h-[480px] flex-col gap-6 @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4">
+                  <canvas id="silk-bg" class="absolute inset-0 w-full h-full -z-10"></canvas>
+                  <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.45))]"></div>
+                  <div class="flex flex-col gap-2 text-center relative z-10">
                     <h1
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                     >
@@ -71,14 +65,351 @@
                       Unlock the power of precise prompts to create stunning images and videos. Learn the techniques, tips, and keywords to bring your visual concepts to life.
                     </h2>
                   </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1193d4] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                  >
-                    <span class="truncate">Explore Tutorials</span>
-                  </button>
                 </div>
               </div>
             </div>
+            
+            <!-- Image Prompts Manual -->
+            <section id="image-prompts" class="mt-8">
+              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Image Prompts</h2>
+              <p class="text-[#92b7c9] px-4 pb-2">Modelos de prompts profissionais para imagens, separados por categoria (5 exemplos por categoria).</p>
+              <div class="px-4 space-y-3">
+                <!-- Categories list -->
+                <details class="rounded border border-[#325567] bg-[#111c22]" open>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Animal</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Ultra-detailed portrait of a Siberian tiger, golden hour rim lighting, shallow depth of field, sharp focus, photorealistic, 4K</li>
+                    <li>Close-up of a colorful macaw mid-flight, motion freeze, high shutter style, clean sky background, vibrant feathers, masterpiece quality</li>
+                    <li>Baby elephant splashing water, low angle perspective, warm sunlight, bokeh background, soft highlights, professional photography</li>
+                    <li>Black stallion running through mist, dramatic backlight, cinematic contrast, dust particles, detailed mane, high detail</li>
+                    <li>Red fox in snowy forest, soft diffuse light, leading lines composition, pristine fur texture, natural color grading</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Paisagem</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Alpine lake at dawn, mirror reflection, pastel sky gradient, long exposure water, rule of thirds, polarizing filter look</li>
+                    <li>Desert dunes at golden hour, sweeping curves, minimalist composition, soft shadows, crisp details, 4K</li>
+                    <li>Coastal cliffs with crashing waves, dramatic clouds, moody tones, wide-angle perspective, leading foreground rocks</li>
+                    <li>Misty forest path, volumetric light rays, mossy textures, shallow haze, serene atmosphere, high dynamic range</li>
+                    <li>Lavender fields at sunset, vanishing point, warm glow, soft bokeh background, color harmony, professional quality</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Futurista</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Neon cyberpunk alley, rain-soaked pavement reflections, volumetric fog, holographic signs, ultra-detailed, 3D render style</li>
+                    <li>Futuristic skyline at night, flying vehicles, high contrast lights, deep blues and magentas, clean hard-surface design</li>
+                    <li>Android portrait with realistic skin and micro-circuit details, studio lighting, high-end retouching look</li>
+                    <li>Spaceship interior corridor, moody light strips, symmetrical composition, industrial textures, high realism</li>
+                    <li>Futuristic marketplace with diverse species, rich colors, depth of field, atmospheric perspective</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Minimalista</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Single chair against clean pastel wall, soft shadows, negative space, centered composition, editorial style</li>
+                    <li>Monochrome geometric shapes, hard light, crisp edges, high contrast, fine-art minimalism</li>
+                    <li>Solitary tree on snow field, overcast soft light, rule of thirds, serene mood, muted palette</li>
+                    <li>Minimal product shot on seamless background, softbox lighting, subtle reflective base, sharp focus</li>
+                    <li>Ocean horizon line under clear sky, minimalist color field, calming atmosphere</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Brutalista</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Concrete megastructure, raw textures, harsh shadows, low-key lighting, architectural photography</li>
+                    <li>Stark stairwell in exposed concrete, graphic lines, high contrast, desaturated palette</li>
+                    <li>Brutalist facade close-up, repeating modules, perspective lines, moody overcast ambiance</li>
+                    <li>Empty plaza with monolithic blocks, wide-angle, cold tones, minimalist composition</li>
+                    <li>Interior brutalist atrium, skylight shafts, rough surfaces, textural detail</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Bokeh</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Portrait with creamy bokeh, 85mm look, shallow DOF, golden hour highlights, skin tone fidelity</li>
+                    <li>Fairy lights macro with circular bokeh, warm tones, soft glow, dreamy atmosphere</li>
+                    <li>City lights at night, telephoto compression, colorful bokeh orbs, cinematic mood</li>
+                    <li>Flower macro with blurred garden background, delicate details, pastel palette</li>
+                    <li>Product shot with tasteful bokeh, soft gradients, subtle reflections, premium feel</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Porta Retrato</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Classic family portrait, studio backdrop, soft three-point lighting, natural smiles, sharp focus</li>
+                    <li>Elegant headshot, clean background, catchlights in eyes, professional retouch, 4K</li>
+                    <li>Couple portrait outdoors, backlit hair light, warm tones, candid connection</li>
+                    <li>Senior portrait with character, textured background, moody lighting, storytelling vibe</li>
+                    <li>Child portrait with soft props, pastel colors, gentle expressions, safe framing</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Casual</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Street photo of a candid laugh, natural light, authentic vibe, soft film grain</li>
+                    <li>Home coffee scene, warm morning light, cozy textures, lifestyle composition</li>
+                    <li>Friends walking downtown, motion blur accents, urban tones, documentary style</li>
+                    <li>Workspace flatlay, top-down, arranged items, soft shadows, color-coordinated</li>
+                    <li>Pet with owner on a couch, candid moment, soft focus background, intimate framing</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Fashion</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Editorial fashion shot, studio cyclorama, dramatic key light, bold styling, glossy finish</li>
+                    <li>Street fashion lookbook, urban backdrop, natural light, vibrant outfit contrast</li>
+                    <li>Runway-inspired pose, long shadows, clean composition, high-end retouch</li>
+                    <li>Beauty close-up, flawless skin, soft diffused lighting, bold makeup, crisp detail</li>
+                    <li>Accessories focus, macro detail, textured background, brand aesthetic</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Movimento</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Dancer mid-leap, motion freeze, dramatic backlight, powder particles, dynamic pose</li>
+                    <li>Long exposure light trails on highway, vivid colors, leading lines, night mood</li>
+                    <li>Skater action shot, low angle, shallow DOF, gritty urban feel</li>
+                    <li>Water splash over fruit, high shutter simulation, crisp droplets, studio setup</li>
+                    <li>Runner on track, panning blur background, sharp subject, sunrise ambiance</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Veículos</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Classic car at dusk, glossy reflections, cinematic lighting, wet street look</li>
+                    <li>Motorcycle studio shot, rim lights, smoke haze, high contrast, sharp chrome</li>
+                    <li>Off-road SUV on mountain trail, dust in air, golden hour, rugged detail</li>
+                    <li>Futuristic concept car, wind tunnel feel, hard light, clean background</li>
+                    <li>Vintage airplane on tarmac, warm sunset, dramatic clouds, nostalgic tone</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Promocional</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Product hero shot on seamless, soft gradients, premium lighting, sharp focus, brand colors</li>
+                    <li>Ad-style flatlay, balanced composition, typography space, clean aesthetic</li>
+                    <li>Food styling close-up, steam highlights, appetizing textures, warm tones</li>
+                    <li>Cosmetics macro, glossy reflections, soft specular highlights, elegant palette</li>
+                    <li>Tech gadget in dramatic light, minimal background, subtle glow, futuristic mood</li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+
+            <!-- Video Prompts Manual -->
+            <section id="video-prompts" class="mt-10">
+              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Video Prompts</h2>
+              <p class="text-[#92b7c9] px-4 pb-2">Modelos de prompts para vídeos (mesmas categorias, 5 exemplos por categoria).</p>
+              <div class="px-4 space-y-3">
+                <!-- We'll mirror categories with action/temporal cues -->
+                <details class="rounded border border-[#325567] bg-[#111c22]" open>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Animal</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Slow-motion of a hummingbird feeding, macro lens look, natural backlight, crisp detail, clean background</li>
+                    <li>Tracking shot of wolves running through snow, wide angle, cinematic grading, breath vapor visible</li>
+                    <li>Underwater turtle gliding, sun rays through water, serene pacing, gentle camera drift</li>
+                    <li>Close-up of a horse galloping, hair and dust in slow motion, dramatic score feel</li>
+                    <li>Time-lapse of ants building, macro focus, consistent framing, natural textures</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Paisagem</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Time-lapse of mountain sunrise, clouds rolling, golden light progression, stable tripod</li>
+                    <li>Drone orbit over coastal cliffs, steady movement, cinematic LUT, blue-green palette</li>
+                    <li>Handheld hike POV through forest, soft stabilization, natural ambience</li>
+                    <li>Long exposure night lapse of stars over desert dunes, clean composition</li>
+                    <li>Waterfall with slow shutter feel, lush greens, moody mist, gentle dolly-in</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Futurista</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Cyberpunk street at night, rain, neon reflections, steady gimbal glide, ambient synths</li>
+                    <li>Spaceship cockpit sequence, UI holograms animating, parallax moves, deep black levels</li>
+                    <li>Drone fly-through futuristic city canyons, dynamic speed ramps, neon glow</li>
+                    <li>Android waking up, micro-movements, shallow DOF, sterile lab lighting</li>
+                    <li>Futuristic market establishing shot, crowd flow, color pops, atmospheric haze</li>
+                  </ul>
+                </details>
+                <!-- Repeat pattern for Minimalista, Brutalista, Bokeh, Porta Retrato, Casual, Fashion, Movimento, Veículos, Promocional -->
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Minimalista</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Static shot of single object in negative space, gentle light shift, clean background</li>
+                    <li>Monochrome geometric loop, smooth motion, crisp edges, minimal soundtrack</li>
+                    <li>Slow dolly on horizon line ocean scene, meditative pacing, soft gradients</li>
+                    <li>Product rotation on seamless, soft reflections, studio clarity</li>
+                    <li>Minimal interior with light moving across wall, time-lapse effect</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Brutalista</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Architectural tracking along concrete facade, harsh shadows, graphic lines</li>
+                    <li>Stairwell descent shot, symmetrical framing, moody overcast light</li>
+                    <li>Wide shot of monolithic blocks with pedestrians, slow speed ramps</li>
+                    <li>Interior atrium tilt-up, skylight rays, gritty texture focus</li>
+                    <li>Close-ups of raw concrete surfaces with shallow DOF, tactile details</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Bokeh</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Night city bokeh glide, soft lens look, warm tones, shallow depth</li>
+                    <li>Macro fairy lights twinkle loop, dreamy glow, subtle camera drift</li>
+                    <li>Portrait with moving bokeh background, circular highlights, golden hour</li>
+                    <li>Garden macro with gentle sway, pastel palette, soft focus transitions</li>
+                    <li>Product with tasteful bokeh reveal, elegant motion, premium feel</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Porta Retrato</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Studio headshot session, subtle expression changes, soft key light</li>
+                    <li>Couple portrait outdoor, backlit hair light, candid laugh moments</li>
+                    <li>Senior portrait with character details, slow push-in, moody tones</li>
+                    <li>Child portrait with props, pastel color grading, gentle movements</li>
+                    <li>Family portrait setup, group posing variations, clean background</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Casual</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Lifestyle coffee morning, natural light, handheld warmth, candid vibe</li>
+                    <li>Street walk-and-talk, gentle stabilization, environmental cutaways</li>
+                    <li>Home office B-roll, top-down inserts, soft shadows, color coordination</li>
+                    <li>Friends laughing, authentic reactions, documentary pacing</li>
+                    <li>Pet moments on sofa, shallow DOF, cozy framing</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Fashion</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Editorial studio walk, strong key light, dramatic shadows, glossy finish</li>
+                    <li>Street fashion montage, transitions on beats, bold colors</li>
+                    <li>Runway-inspired poses, long shadows, slow-motion highlights</li>
+                    <li>Beauty close-ups with soft lighting, macro details, high-end look</li>
+                    <li>Accessory reveal shots, macro focus, elegant motion</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Movimento</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Dancer leap in slow motion, powder accents, dynamic tracking</li>
+                    <li>Light trail timelapse in city, vibrant colors, stable tripod</li>
+                    <li>Skater action sequence, low angle, gritty cuts</li>
+                    <li>Splash shots in studio, high-speed feel, crisp droplets</li>
+                    <li>Runner pacing on track, panning blur, sunrise tones</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Veículos</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Car rolling shots at dusk, glossy reflections, wet street look</li>
+                    <li>Motorcycle studio turntable, rim light, smoke haze, high contrast</li>
+                    <li>Off-road SUV climbing ridge, dust plume, golden hour</li>
+                    <li>Concept car tunnel glide, neon strips, futuristic vibes</li>
+                    <li>Vintage plane taxiing, warm sunset, dramatic clouds</li>
+                  </ul>
+                </details>
+                <details class="rounded border border-[#325567] bg-[#111c22]">
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Promocional</summary>
+                  <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
+                    <li>Product hero rotation on seamless, soft gradients, premium lighting</li>
+                    <li>Ad-style flatlay cut-ins, typography space, clean aesthetic</li>
+                    <li>Food close-ups with steam, appetizing textures, warm tones</li>
+                    <li>Cosmetics macro animations, glossy reflections, elegant palette</li>
+                    <li>Tech gadget dramatic reveals, minimal background, subtle glow</li>
+                  </ul>
+                </details>
+              </div>
+            </section>
+
+            <!-- Examples Section -->
+            <section id="examples" class="mt-10">
+              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Examples</h2>
+              <p class="text-[#92b7c9] px-4 pb-2">Como formar um prompt sem errar: descreva o assunto, o estilo, a composição, a iluminação, o ambiente e a qualidade. Use vírgulas para separar atributos e mantenha do geral ao específico.</p>
+              <ul class="text-[#92b7c9] text-sm leading-relaxed px-10 pb-4 list-disc">
+                <li>Portrait: photorealistic, elegant headshot, softbox lighting, clean studio background, sharp focus, 4K, professional quality</li>
+                <li>Landscape: alpine lake at dawn, mirror reflection, pastel sky gradient, long exposure water, rule of thirds, high detail</li>
+                <li>Product: premium gadget on matte surface, soft rim light, minimal background, subtle glow, sharp focus, brand colors</li>
+                <li>Fashion: editorial studio, bold styling, dramatic key light, glossy finish, high-end retouch</li>
+                <li>Cyberpunk city: neon reflections on wet street, volumetric fog, cinematic lighting, depth of field</li>
+              </ul>
+            </section>
+
+            <!-- Tips Section -->
+            <section id="tips" class="mt-10">
+              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Tips</h2>
+              <div class="px-4 space-y-3">
+                <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+                  <div class="flex flex-col justify-center">
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Prompts Negativos</p>
+                    <p class="text-[#92b7c9] text-sm">Use para remover ruídos: "no watermark, no text, no extra limbs, no distortions, no artifacts".</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+                  <div class="flex flex-col justify-center">
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Tamanhos e Layouts (Fotos)</p>
+                    <p class="text-[#92b7c9] text-sm">Especifique aspect ratio: 1:1 (quadrado), 3:2 (clássico), 4:5 (Instagram), 16:9 (wide), 9:16 (stories).</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+                  <div class="flex flex-col justify-center">
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Iluminação</p>
+                    <p class="text-[#92b7c9] text-sm">Golden hour, softbox, rim lighting, backlighting, dramatic shadows, volumetric light.</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
+                  <div class="flex flex-col justify-center">
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Composição</p>
+                    <p class="text-[#92b7c9] text-sm">Rule of thirds, centered composition, leading lines, negative space, symmetry.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Glossary Section -->
+            <section id="glossary" class="mt-10">
+              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Glossary</h2>
+              <div class="px-4 py-3 @container">
+                <div class="flex overflow-hidden rounded-lg border border-[#325567] bg-[#111c22]">
+                  <table class="flex-1">
+                    <thead>
+                      <tr class="bg-[#192b33]">
+                        <th class="px-4 py-3 text-left text-white w-[240px] text-sm font-medium">Term</th>
+                        <th class="px-4 py-3 text-left text-white text-sm font-medium">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">DOF (Depth of Field)</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Profundidade de campo, controla o desfoque do fundo e o foco do sujeito.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Bokeh</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Qualidade estética do desfoque em áreas fora de foco (luzes e destaques).</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Rim Lighting</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Luz de recorte que contorna o sujeito, criando destaque na borda.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Volumetric Light</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Raios de luz visíveis no ar por partículas, criando profundidade atmosférica.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Color Grading</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Ajuste de cores e contrastes para criar um mood/estética específica.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Gimbal</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Suporte estabilizador para movimentos suaves de câmera.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Parallax</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Efeito de profundidade quando planos se movem em velocidades diferentes.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Aspect Ratio</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Proporção entre largura e altura (ex.: 16:9, 4:5, 1:1, 9:16).</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">HDR</td><td class="px-4 py-2 text-[#92b7c9] text-sm">High Dynamic Range, amplia detalhes em áreas claras e escuras.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm"> LUT</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Look-Up Table, preset de colorização para vídeos.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Footer Contact -->
+            <footer class="mt-12 px-4 pb-10">
+              <div class="flex items-center justify-center">
+                <a href="mailto:willian@goat.dev.br" class="flex items-center gap-2 px-4 py-3 rounded-lg bg-[#1193d4] text-white font-semibold hover:bg-[#0d7db0] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm-8,32v3.56l-79.13,57.7a8,8,0,0,1-9.74,0L48,83.56V80ZM32,192V96.39l80.43,58.67a24,24,0,0,0,28.74,0L224,96.39V192Z"></path></svg>
+                  <span>Fale comigo</span>
+                </a>
+              </div>
+            </footer>
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Template Generator</h2>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
@@ -486,6 +817,67 @@
     </div>
 
     <script>
+      // Smooth scroll for internal links
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (a) {
+          const id = a.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+
+      // Simple animated canvas background (silk-like waves) - lightweight alternative to three.js
+      (function silkBG(){
+        const canvas = document.getElementById('silk-bg');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let w, h, t = 0;
+        const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+        function resize(){
+          w = canvas.clientWidth; h = canvas.clientHeight;
+          canvas.width = Math.floor(w * DPR);
+          canvas.height = Math.floor(h * DPR);
+          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function wave(yBase, amp, freq, phase, color){
+          ctx.beginPath();
+          for (let x = 0; x <= w; x += 2) {
+            const y = yBase + Math.sin((x * freq) + phase + t) * amp;
+            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2;
+          ctx.globalAlpha = 0.6;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+
+        function loop(){
+          ctx.clearRect(0, 0, w, h);
+          // gradient background subtle
+          const g = ctx.createLinearGradient(0, 0, 0, h);
+          g.addColorStop(0, '#1a2730');
+          g.addColorStop(1, '#0f171c');
+          ctx.fillStyle = g;
+          ctx.fillRect(0, 0, w, h);
+
+          wave(h*0.35, 18, 0.012, 0, '#7B7481');
+          wave(h*0.5, 26, 0.009, 1.5, '#1193d4');
+          wave(h*0.65, 14, 0.015, 3.0, '#5fb3d8');
+
+          t += 0.015;
+          requestAnimationFrame(loop);
+        }
+        loop();
+      })();
+
       // Function to update form fields based on output type
       function updateFormFields() {
         const outputType = document.getElementById('outputType').value;
