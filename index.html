@@ -8,12 +8,29 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700"
     />
 
-    <title>Stitch Design</title>
+  <title>PromptCraft</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
+    <!-- PT-BR Notice Modal -->
+    <div id="ptbr-modal" class="fixed inset-0 hidden items-center justify-center bg-black/50 z-50">
+      <div class="max-w-[560px] w-[92%] rounded-lg border border-[#325567] bg-[#111c22] p-5 text-white shadow-xl">
+        <h3 class="text-lg font-bold mb-2">Aviso importante</h3>
+        <p class="text-[#b4ccd9] text-sm leading-relaxed mb-2">Este site está em inglês por exigência de algumas plataformas de IA que funcionam melhor com prompts em inglês.</p>
+        <p class="text-[#b4ccd9] text-sm leading-relaxed mb-4">Você pode criar seus prompts aqui e, se preferir, traduzir seu resultado depois. Obrigado pela compreensão!</p>
+        <div class="flex items-center justify-between gap-3">
+          <label class="inline-flex items-center gap-2 text-sm text-[#b4ccd9]">
+            <input id="ptbr-hide" type="checkbox" class="rounded border-[#325567] bg-[#192b33] text-[#1193d4] focus:ring-0" />
+            Não mostrar novamente
+          </label>
+          <div class="flex gap-2">
+            <button id="ptbr-close" class="px-4 py-2 rounded-lg bg-[#233c48] hover:bg-[#325567] transition-colors text-white text-sm font-semibold">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       class="relative flex h-auto min-h-screen w-full flex-col bg-[#111c22] dark group/design-root overflow-x-hidden"
       style='--select-button-svg: url(&apos;data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(146,183,201)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e&apos;); font-family: "Space Grotesk", "Noto Sans", sans-serif;'
@@ -42,7 +59,7 @@
               <a class="text-white text-sm font-medium leading-normal" href="#home">Home</a>
               <a class="text-white text-sm font-medium leading-normal" href="#image-prompts">Image Prompts</a>
               <a class="text-white text-sm font-medium leading-normal" href="#video-prompts">Video Prompts</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#estilos">Estilos</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#estilos">Styles</a>
               <a class="text-white text-sm font-medium leading-normal" href="#examples">Examples</a>
               <a class="text-white text-sm font-medium leading-normal" href="#tips">Tips</a>
               <a class="text-white text-sm font-medium leading-normal" href="#glossary">Glossary</a>
@@ -73,7 +90,7 @@
             <!-- Image Prompts Manual -->
             <section id="image-prompts" class="mt-8">
               <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Image Prompts</h2>
-              <p class="text-[#92b7c9] px-4 pb-2">Modelos de prompts profissionais para imagens, separados por categoria (5 exemplos por categoria).</p>
+              <p class="text-[#92b7c9] px-4 pb-2">Professional prompt templates for images, organized by category (5 examples per category).</p>
               <div class="px-4 space-y-3">
                 <!-- Categories list -->
                 <details class="rounded border border-[#325567] bg-[#111c22]" open>
@@ -87,7 +104,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Paisagem</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Landscape</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Alpine lake at dawn, mirror reflection, pastel sky gradient, long exposure water, rule of thirds, polarizing filter look</li>
                     <li>Desert dunes at golden hour, sweeping curves, minimalist composition, soft shadows, crisp details, 4K</li>
@@ -97,7 +114,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Futurista</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Futuristic</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Neon cyberpunk alley, rain-soaked pavement reflections, volumetric fog, holographic signs, ultra-detailed, 3D render style</li>
                     <li>Futuristic skyline at night, flying vehicles, high contrast lights, deep blues and magentas, clean hard-surface design</li>
@@ -107,7 +124,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Minimalista</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Minimalist</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Single chair against clean pastel wall, soft shadows, negative space, centered composition, editorial style</li>
                     <li>Monochrome geometric shapes, hard light, crisp edges, high contrast, fine-art minimalism</li>
@@ -117,7 +134,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Brutalista</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Brutalist</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Concrete megastructure, raw textures, harsh shadows, low-key lighting, architectural photography</li>
                     <li>Stark stairwell in exposed concrete, graphic lines, high contrast, desaturated palette</li>
@@ -137,7 +154,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Porta Retrato</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Portrait</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Classic family portrait, studio backdrop, soft three-point lighting, natural smiles, sharp focus</li>
                     <li>Elegant headshot, clean background, catchlights in eyes, professional retouch, 4K</li>
@@ -167,7 +184,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Movimento</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Motion</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Dancer mid-leap, motion freeze, dramatic backlight, powder particles, dynamic pose</li>
                     <li>Long exposure light trails on highway, vivid colors, leading lines, night mood</li>
@@ -177,7 +194,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Veículos</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Vehicles</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Classic car at dusk, glossy reflections, cinematic lighting, wet street look</li>
                     <li>Motorcycle studio shot, rim lights, smoke haze, high contrast, sharp chrome</li>
@@ -187,7 +204,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Promocional</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Promotional</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Product hero shot on seamless, soft gradients, premium lighting, sharp focus, brand colors</li>
                     <li>Ad-style flatlay, balanced composition, typography space, clean aesthetic</li>
@@ -202,7 +219,7 @@
             <!-- Video Prompts Manual -->
             <section id="video-prompts" class="mt-10">
               <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Video Prompts</h2>
-              <p class="text-[#92b7c9] px-4 pb-2">Modelos de prompts para vídeos (mesmas categorias, 5 exemplos por categoria).</p>
+              <p class="text-[#92b7c9] px-4 pb-2">Prompt templates for videos (same categories, 5 examples per category).</p>
               <div class="px-4 space-y-3">
                 <!-- We'll mirror categories with action/temporal cues -->
                 <details class="rounded border border-[#325567] bg-[#111c22]" open>
@@ -216,7 +233,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Paisagem</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Landscape</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Time-lapse of mountain sunrise, clouds rolling, golden light progression, stable tripod</li>
                     <li>Drone orbit over coastal cliffs, steady movement, cinematic LUT, blue-green palette</li>
@@ -226,7 +243,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Futurista</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Futuristic</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Cyberpunk street at night, rain, neon reflections, steady gimbal glide, ambient synths</li>
                     <li>Spaceship cockpit sequence, UI holograms animating, parallax moves, deep black levels</li>
@@ -237,7 +254,7 @@
                 </details>
                 <!-- Repeat pattern for Minimalista, Brutalista, Bokeh, Porta Retrato, Casual, Fashion, Movimento, Veículos, Promocional -->
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Minimalista</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Minimalist</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Static shot of single object in negative space, gentle light shift, clean background</li>
                     <li>Monochrome geometric loop, smooth motion, crisp edges, minimal soundtrack</li>
@@ -247,7 +264,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Brutalista</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Brutalist</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Architectural tracking along concrete facade, harsh shadows, graphic lines</li>
                     <li>Stairwell descent shot, symmetrical framing, moody overcast light</li>
@@ -267,7 +284,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Porta Retrato</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Portrait</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Studio headshot session, subtle expression changes, soft key light</li>
                     <li>Couple portrait outdoor, backlit hair light, candid laugh moments</li>
@@ -297,7 +314,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Movimento</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Motion</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Dancer leap in slow motion, powder accents, dynamic tracking</li>
                     <li>Light trail timelapse in city, vibrant colors, stable tripod</li>
@@ -307,7 +324,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Veículos</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Vehicles</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Car rolling shots at dusk, glossy reflections, wet street look</li>
                     <li>Motorcycle studio turntable, rim light, smoke haze, high contrast</li>
@@ -317,7 +334,7 @@
                   </ul>
                 </details>
                 <details class="rounded border border-[#325567] bg-[#111c22]">
-                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Promocional</summary>
+                  <summary class="cursor-pointer select-none px-4 py-3 text-white font-semibold">Promotional</summary>
                   <ul class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4 list-disc">
                     <li>Product hero rotation on seamless, soft gradients, premium lighting</li>
                     <li>Ad-style flatlay cut-ins, typography space, clean aesthetic</li>
@@ -332,7 +349,7 @@
             <!-- Examples Section -->
             <section id="examples" class="mt-10">
               <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Examples</h2>
-              <p class="text-[#92b7c9] px-4 pb-2">Como formar um prompt sem errar: descreva o assunto, o estilo, a composição, a iluminação, o ambiente e a qualidade. Use vírgulas para separar atributos e mantenha do geral ao específico.</p>
+              <p class="text-[#92b7c9] px-4 pb-2">How to structure a prompt: describe the subject, style, composition, lighting, environment, and quality. Separate attributes with commas and go from general to specific.</p>
               <ul class="text-[#92b7c9] text-sm leading-relaxed px-10 pb-4 list-disc">
                 <li>Portrait: photorealistic, elegant headshot, softbox lighting, clean studio background, sharp focus, 4K, professional quality</li>
                 <li>Landscape: alpine lake at dawn, mirror reflection, pastel sky gradient, long exposure water, rule of thirds, high detail</li>
@@ -342,143 +359,143 @@
               </ul>
             </section>
 
-            <!-- Estilos e Exemplos Section -->
+            <!-- Styles and Examples Section -->
             <section id="estilos" class="mt-10">
-              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Estilos e Exemplos</h2>
-              <p class="text-[#92b7c9] px-4 pb-3">Navegue por estilos organizados em categorias. Clique para ver a descrição de cada estilo.</p>
+              <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3">Styles and Examples</h2>
+              <p class="text-[#92b7c9] px-4 pb-3">Browse styles organized by category. Click to expand and read each style description.</p>
 
               <!-- Mini Menu Pills -->
               <div class="px-4 pb-4">
                 <div class="flex gap-2 overflow-x-auto no-scrollbar">
-                  <a href="#estilos-foto" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Estilos de Foto</a>
-                  <a href="#estilos-arte" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Estilos de Arte</a>
-                  <a href="#estilos-digital" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Estilos de Digital</a>
-                  <a href="#estilos-3d" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Estilos de 3D</a>
-                  <a href="#estilos-cena" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Estilos de Cena</a>
+                  <a href="#estilos-foto" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Photo Styles</a>
+                  <a href="#estilos-arte" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Art Styles</a>
+                  <a href="#estilos-digital" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Digital Styles</a>
+                  <a href="#estilos-3d" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">3D Styles</a>
+                  <a href="#estilos-cena" class="px-3 py-1 rounded-full bg-[#111c22] border border-[#325567] text-white text-sm whitespace-nowrap hover:bg-[#192b33]">Scene Styles</a>
                 </div>
               </div>
 
-              <!-- Estilos de Foto -->
+              <!-- Photo Styles -->
               <div id="estilos-foto" class="px-4 space-y-3">
-                <h3 class="text-white text-lg font-semibold">Estilos de Foto</h3>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Interior</summary><div class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4"><p>Inspirada por imagens capturadas dentro de um prédio ou estrutura, mostra o objeto em um ambiente controlado.</p><p class="pt-2 text-xs text-[#b4ccd9]">Exemplo: retrato corporativo em estúdio, iluminação softbox, fundo cinza neutro, foco nítido, 4K.</p></div></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Exterior</summary><div class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4"><p>Inspira-se nos arredores naturais para mostrar a pessoa em um ambiente aberto.</p><p class="pt-2 text-xs text-[#b4ccd9]">Exemplo: foto lifestyle ao ar livre, hora dourada, fundo desfocado, cores naturais, alta definição.</p></div></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Bokeh</summary><div class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4"><p>Plano de fundo desfocado intencionalmente, estética agradável que foca no objeto.</p><p class="pt-2 text-xs text-[#b4ccd9]">Exemplo: retrato noturno com luzes de cidade desfocadas, desfoque suave, tom quente.</p></div></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Preto e branco</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Fotografia monocromática que enfatiza contraste, textura e tonalidade.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Close</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Close-ups bem enquadrados focando detalhes e texturas do objeto.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Publicidade - testemunho</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Imagens que incorporam avaliações de clientes para promover produtos ou serviços.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cyberpunk</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estilo futurista com neon, paisagens urbanas e tecnologia avançada.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Olho de peixe</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Perspectiva ultra larga inspirada em lentes olho de peixe.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Foto de estúdio</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Fotos profissionalmente iluminadas em estúdio, ênfase no sujeito.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Colódio úmido</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estilo vintage com textura distinta e toque de antiguidade.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Desfoque de movimento</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Captura movimento para transmitir velocidade ou ação.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Foto instantânea</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estilo retrô com bordas brancas e paleta de cores quentes.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Retrato mal-humorado</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Iluminação dramática e tons escuros, provocando emoções.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Retrato ousado</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores vívidas e iluminação forte enfatizando personalidade.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Ação na água</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Atividades aquáticas em movimento, como surfe ou natação.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pôr do sol</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Tonalidades quentes e douradas, atmosfera romântica e nostálgica.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Produto brutalista</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Formas geométricas e materiais brutos destacando forma e função.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Produto de verão</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ambiente ensolarado que evoca calor e lazer para produtos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Publicidade - produto</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Mostra características e benefícios com composições claras.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Produto náutico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cenários marítimos com água, barcos e temas costeiros.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Publicidade - pódio</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Produtos em pedestal/pódio destacando importância e notoriedade.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Emoldurado</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Imagens com borda visível, aspecto de moldura.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Hieróglifo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Figuras e elementos simbólicos inspirados em hieróglifos egípcios.</p></details>
+                <h3 class="text-white text-lg font-semibold">Photo Styles</h3>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Indoor</summary><div class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4"><p>Inspired by images captured inside a building or structure, showcasing the subject in a controlled setting.</p><p class="example-line pt-2 text-xs text-[#b4ccd9]">Example: corporate studio headshot, softbox lighting, neutral gray background, sharp focus, 4K.</p></div></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Outdoor</summary><div class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4"><p>Inspired by natural surroundings to feature the subject in an open environment.</p><p class="example-line pt-2 text-xs text-[#b4ccd9]">Example: lifestyle photo outdoors at golden hour, blurred background, natural colors, high definition.</p></div></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Bokeh</summary><div class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4"><p>Deliberately blurred background for an artistic look that emphasizes the subject.</p><p class="example-line pt-2 text-xs text-[#b4ccd9]">Example: night portrait with city lights bokeh, soft blur, warm tone.</p></div></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Black and white</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Monochrome photography emphasizing contrast, texture, and tonality.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Close-up</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Well-framed close-ups focusing on details and textures of the subject.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Testimonial ad</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Images that incorporate customer reviews to promote products or services.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cyberpunk</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Futuristic neon aesthetic with urban environments and advanced technology.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Fisheye</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ultra-wide perspective inspired by fisheye lenses.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Studio photo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Professionally lit studio photos emphasizing the subject.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Wet plate collodion</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Vintage aesthetic with distinctive texture and antique feel.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Motion blur</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Capturing motion to convey speed or action.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Instant film</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Retro style with white borders and warm color palette.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Moody portrait</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Dramatic lighting and dark tones evoking emotion.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Bold portrait</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Vivid colors and strong lighting emphasizing personality.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Water action</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Aquatic activities in motion such as surfing or swimming.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Sunset</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Warm golden tones, romantic and nostalgic atmosphere.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Brutalist product</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Geometric forms and raw materials highlighting form and function.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Summer product</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Sunny setting that evokes warmth and leisure for products.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Product advertising</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Showcasing features and benefits with clear compositions.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Nautical product</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Maritime settings with water, boats, and coastal themes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Podium advertising</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Products on a pedestal/podium highlighting importance and prestige.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Framed</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Images with a visible border, frame-like look.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Hieroglyph</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Figures and symbolic elements inspired by Egyptian hieroglyphs.</p></details>
               </div>
 
-              <!-- Estilos de Arte -->
+              <!-- Art Styles -->
               <div id="estilos-arte" class="px-4 space-y-3 mt-8">
-                <h3 class="text-white text-lg font-semibold">Estilos de Arte</h3>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Aquarela</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Aparência suave e fluida, semelhante a pinturas tradicionais em aquarela.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Desenho em tons pastéis</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Aparência suave e delicada com cores pastéis e sombra sutil.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Desenho animado</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ilustração divertida e simplificada, cores vibrantes e traços exagerados.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pintura em óleo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores ricas e pinceladas visíveis, aparência de pintura tradicional a óleo.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Esboço a lápis</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Linhas e sombras visíveis, aspecto de desenho feito à mão.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Colagem de papel</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Composições unindo pedaços de papel, texturas e padrões variados.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Arte de rua</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores fortes e crítica social, inspirada em grafite e cultura urbana.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Psicodélico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores vibrantes, padrões rodopiantes e imagens surreais.</p></details>
+                <h3 class="text-white text-lg font-semibold">Art Styles</h3>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Watercolor</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Soft and fluid appearance, similar to traditional watercolor paintings.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pastel drawing</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Soft and delicate look with pastel colors and subtle shadow.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cartoon</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Playful simplified illustration with vibrant colors and exaggerated strokes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Oil painting</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Rich colors and visible brushstrokes, traditional oil painting look.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pencil sketch</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Visible lines and shading, hand-drawn appearance.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Paper collage</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Compositions combining paper pieces, textures, and varied patterns.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Street art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Bold colors and social commentary inspired by graffiti and urban culture.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Psychedelic</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Vibrant colors, swirling patterns, and surreal imagery.</p></details>
                 <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Ukiyo-e</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estilo japonês com xilogravura, paisagens, flora e fauna.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Barroco</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Detalhes complexos e cores ricas, sensação de grandeza.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Livro de colorir</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Arte em linhas simplificadas criada para colorir, contornos marcados.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pop art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores fortes, contrastes marcantes e referências à cultura pop.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Art nouveau</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Formas orgânicas, linhas elegantes e elementos decorativos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Anime</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Animação japonesa, temas fantásticos e expressões marcantes.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mangá</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Quadrinhos japoneses com ilustrações detalhadas e variados gêneros.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Antropomórfico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Animais ou objetos com características e emoções humanas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Boho vintage</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Mistura de elementos vintage e boêmios, cores quentes e texturas naturais.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Floral</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Flores e elementos botânicos, sensação de romance e elegância.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cubismo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Formas geométricas e fragmentadas, decompondo objetos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Arte em azulejo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Padrões repetidos e cores ousadas que lembram azulejos decorativos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Medieval</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Manuscritos iluminados, arquitetura gótica e temas históricos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Surreal</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Elementos oníricos que misturam realidade e imaginação.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Álbum de rock</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Visual para capas de álbuns, tipografia ousada e estética rebelde.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Ilustração infantil</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estilo lúdico e colorido que provoca admiração e imaginação.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Retrato steampunk</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estética retrofuturista com engrenagens, metais e visual vitoriano.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Expressionista</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores fortes e pinceladas expressivas, foco em emoção e clima.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Sinistro</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Atmosfera sombria e inquietante, personagens misteriosos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Desenho fantasioso</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ilustrações extravagantes com personagens e ambientes fantásticos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mosaico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Imagem composta por pequenos pedaços coloridos, como vidro ou azulejos.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Baroque</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Complex details and rich colors with a sense of grandeur.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Coloring book</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Simplified line art created for coloring with bold outlines.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pop art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Bold colors, strong contrasts, and references to pop culture.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Art nouveau</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Organic shapes, elegant lines, and decorative elements.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Anime</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Japanese animation with fantastic themes and expressive characters.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Manga</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Japanese comics with detailed illustrations across genres.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Anthropomorphic</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Animals or objects with human characteristics and emotions.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Boho vintage</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Blend of vintage and bohemian elements, warm colors and natural textures.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Floral</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Flowers and botanical elements with a romantic, elegant feel.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cubism</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Geometric and fragmented shapes decomposing objects.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tile art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Repeated patterns and bold colors reminiscent of decorative tiles.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Medieval</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Illuminated manuscripts, gothic architecture, and historical themes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Surreal</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Dreamlike elements blending reality and imagination.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Rock album cover</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Bold typography and rebellious aesthetic for album covers.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Children's illustration</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Playful, colorful style that sparks wonder and imagination.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Steampunk portrait</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Retrofuturist aesthetic with gears, metals, and Victorian look.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Expressionist</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Bold colors and expressive brushwork focusing on emotion and mood.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Sinister</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Dark, unsettling atmosphere with mysterious characters.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Whimsical drawing</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Playful illustrations with fantastical characters and settings.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mosaic</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Image composed of small colored pieces, like glass or tiles.</p></details>
               </div>
 
-              <!-- Estilos de Digital -->
+              <!-- Digital Styles -->
               <div id="estilos-digital" class="px-4 space-y-3 mt-8">
-                <h3 class="text-white text-lg font-semibold">Estilos de Digital</h3>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pixel Art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estilo que se assemelha a gráficos de videogames antigos com pixels visíveis.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Ilustração de blog</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ilustrações para acompanhar publicações, refletindo o assunto do conteúdo.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Ícone de aplicativo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Gráficos pequenos e simples para representar aplicativos móveis.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Adesivo fofo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ilustrações pequenas e divertidas com estética meiga, ideal para stickers.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Design simples</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ilustração minimalista com cores fortes e formas simples.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Vinheta vetorial</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Imagem central com borda decorativa e detalhes complexos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Figurinha em linhas</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ilustrações simples com linhas contínuas, ideais como adesivos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Papercraft</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Inspirado na criação de objetos 3D com papel e dobraduras.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Futurista</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Tecnologia avançada, designs inovadores e ambientes futuristas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tinta espalhada</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Respingo de tinta que cria energia e espontaneidade.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Arte com linhas mínimas</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Linhas simples e contínuas representando pessoas ou cenas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Emoji</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Gráficos pequenos e simples usados para transmitir emoções.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tiki</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Inspirado pela cultura polinésia, com máscaras e temas tropicais.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Vitral</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Aparência de janelas coloridas com linhas fortes e formas geométricas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tropical</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cenas tropicais com cores vibrantes e iluminação solar quente.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Punk</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Estética rebelde com elementos da cultura punk e grafite.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Avatar de neon</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Personagens com cores neon e elementos brilhantes, estética futurista.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Logotipo de esportes</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Tipografia ousada, cores fortes e formas dinâmicas para times/eventos.</p></details>
+                <h3 class="text-white text-lg font-semibold">Digital Styles</h3>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Pixel art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Style resembling retro video game graphics with visible pixels.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Blog illustration</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Illustrations accompanying posts, reflecting the content topic.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">App icon</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Small, simple graphics representing mobile applications.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cute sticker</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Small, fun illustrations with a cute aesthetic, ideal for stickers.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Simple design</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Minimalist illustration with bold colors and simple shapes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Vector vignette</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Central image with decorative border and intricate details.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Line sticker</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Simple illustrations with continuous lines, ideal as stickers.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Papercraft</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Inspired by creating 3D objects with paper and folds.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Futuristic</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Advanced technology, innovative designs, and futuristic environments.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Paint splatter</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Paint splashes that create energy and spontaneity.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Minimal line art</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Simple continuous lines representing people or scenes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Emoji</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Small, simple graphics used to convey emotions.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tiki</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Inspired by Polynesian culture with masks and tropical themes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Stained glass</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Colored window look with strong lines and geometric shapes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tropical</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Tropical scenes with vibrant colors and warm sunlight.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Punk</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Rebellious aesthetic with punk culture elements and graffiti.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Neon avatar</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Characters with neon colors and glowing elements, futuristic aesthetic.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Sports logo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Bold typography, strong colors, and dynamic shapes for teams/events.</p></details>
               </div>
 
-              <!-- Estilos de 3D -->
+              <!-- 3D Styles -->
               <div id="estilos-3d" class="px-4 space-y-3 mt-8">
-                <h3 class="text-white text-lg font-semibold">Estilos de 3D</h3>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Isométrico fofo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Perspectiva isométrica com personagens/objetos adoráveis.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Neon</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores vibrantes e brilhantes, associadas à vida noturna urbana.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Lowpoly</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Formas geométricas com poucos polígonos, aparência facetada.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Metálico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Superfícies reflexivas e texturizadas com brilho metálico.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Personagem fofo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Personagens cativantes com estética adorável e simples.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Avatar fofo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Designs de personagens digitais com estética fofa e atraente.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Origami</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Inspirado na dobradura de papel, formas geométricas e linhas claras.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mecha</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Personagens/veículos robóticos e mecânicos, tema futurista.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Personagem animado</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Caricaturas com traços exagerados e personalidades expressivas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Modelo em argila</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Aparência texturizada e artesanal semelhante a argila.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Escultura em madeira</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Detalhes complexos e texturas naturais inspiradas em madeira.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Balão pequeno</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Formas minimalistas que lembram balões, estética leve e divertida.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Escultura em pedra</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Texturas ásperas e clima histórico/artesanal.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tijolos de plástico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cores fortes e sensação lúdica, inspirado em blocos infantis.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Fofinho</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Texturas suaves, materiais de pelúcia e conforto visual.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mecha multicores</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Mechas com designs multicoloridos em ambientes futuristas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mítico</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Criaturas e ambientes fantásticos inspirados em lendas.</p></details>
+                <h3 class="text-white text-lg font-semibold">3D Styles</h3>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cute isometric</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Isometric perspective with adorable characters/objects.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Neon</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Vibrant, glowing colors associated with urban nightlife.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Low poly</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Geometric forms with few polygons, faceted look.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Metallic</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Reflective, textured surfaces with metallic sheen.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cute character</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Charming characters with a simple, adorable aesthetic.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cute avatar</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Digital character designs with a cute and appealing aesthetic.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Origami</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Inspired by paper folding, geometric shapes and clean lines.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mecha</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Robotic/mechanical characters or vehicles with futuristic theme.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Animated character</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cartoonish characters with exaggerated features and expressive personalities.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Clay model</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Textured, handcrafted look similar to clay.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Wood sculpture</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Intricate details and natural textures inspired by wood.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Small balloon</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Minimalist forms resembling balloons with a light, fun aesthetic.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Stone sculpture</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Rough textures and historical/artisanal feel.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Plastic bricks</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Strong colors and playful feel inspired by toy blocks.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cuddly</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Soft textures, plush materials, and visual comfort.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Multicolor mecha</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Mechas with multicolored designs in futuristic environments.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Mythic</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Fantastic creatures and environments inspired by legends.</p></details>
               </div>
 
-              <!-- Estilos de Cena -->
+              <!-- Scene Styles -->
               <div id="estilos-cena" class="px-4 space-y-3 mt-8">
-                <h3 class="text-white text-lg font-semibold">Estilos de Cena</h3>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Diorama em miniatura</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cenas/modelos em pequena escala com profundidade e detalhes.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Tóquio do futuro</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Tecnologia avançada, neon e ambientes urbanos futuristas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Moda na cidade</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Personagens e vestuário em ambiente urbano com foco em estilo.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cena de inverno</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Neve, gelo e atmosfera fria/serena com paisagens sazonais.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Vida no campo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ambientes rurais, arquitetura rústica e atmosfera aconchegante.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Cozinha da cidade</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Cozinhas urbanas modernas com materiais contemporâneos.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Quarto de pelúcia</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Quartos luxuosos e confortáveis, móveis macios e elegantes.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Supermercado</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Ambiente comercial com exibição de produtos e fluxo cotidiano.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Casa luxuosa à beira-mar</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Casas de praia exuberantes com foco em arquitetura e vistas.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Vida colorida</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Interiores vibrantes e coloridos, atmosfera alegre.</p></details>
-                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Campo de trigo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Beleza natural, tranquilidade e temas agrícolas.</p></details>
+                <h3 class="text-white text-lg font-semibold">Scene Styles</h3>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Miniature diorama</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Small-scale scenes/models with depth and detail.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Future Tokyo</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Advanced technology, neon, and futuristic urban environments.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">City fashion</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Characters and apparel in urban settings with a focus on style.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Winter scene</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Snow, ice, and cold/serene atmosphere with seasonal landscapes.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Countryside life</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Rural environments, rustic architecture, cozy atmosphere.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">City kitchen</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Modern urban kitchens with contemporary materials.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Plush bedroom</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Luxurious, cozy bedrooms with soft, elegant furnishings.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Supermarket</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Commercial environment with product displays and daily flow.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Luxurious seaside house</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Opulent beach houses focusing on architecture and views.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Colorful life</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Vibrant, colorful interiors with a cheerful atmosphere.</p></details>
+                <details class="rounded border border-[#325567] bg-[#111c22]"><summary class="cursor-pointer px-4 py-3 text-white font-semibold">Wheat field</summary><p class="text-[#92b7c9] text-sm leading-relaxed px-6 pb-4">Natural beauty, tranquility, and agricultural themes.</p></details>
               </div>
             </section>
 
@@ -488,25 +505,25 @@
               <div class="px-4 space-y-3">
                 <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
                   <div class="flex flex-col justify-center">
-                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Prompts Negativos</p>
-                    <p class="text-[#92b7c9] text-sm">Use para remover ruídos: "no watermark, no text, no extra limbs, no distortions, no artifacts".</p>
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Negative Prompts</p>
+                    <p class="text-[#92b7c9] text-sm">Use to remove noise: "no watermark, no text, no extra limbs, no distortions, no artifacts".</p>
                   </div>
                 </div>
                 <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
                   <div class="flex flex-col justify-center">
-                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Tamanhos e Layouts (Fotos)</p>
-                    <p class="text-[#92b7c9] text-sm">Especifique aspect ratio: 1:1 (quadrado), 3:2 (clássico), 4:5 (Instagram), 16:9 (wide), 9:16 (stories).</p>
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Sizes and Layouts (Photos)</p>
+                    <p class="text-[#92b7c9] text-sm">Specify aspect ratio: 1:1 (square), 3:2 (classic), 4:5 (Instagram), 16:9 (wide), 9:16 (stories).</p>
                   </div>
                 </div>
                 <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
                   <div class="flex flex-col justify-center">
-                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Iluminação</p>
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Lighting</p>
                     <p class="text-[#92b7c9] text-sm">Golden hour, softbox, rim lighting, backlighting, dramatic shadows, volumetric light.</p>
                   </div>
                 </div>
                 <div class="flex items-center gap-4 bg-[#111c22] px-4 min-h-[72px] py-2">
                   <div class="flex flex-col justify-center">
-                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Composição</p>
+                    <p class="text-white text-base font-medium leading-normal line-clamp-1">Composition</p>
                     <p class="text-[#92b7c9] text-sm">Rule of thirds, centered composition, leading lines, negative space, symmetry.</p>
                   </div>
                 </div>
@@ -526,16 +543,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">DOF (Depth of Field)</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Profundidade de campo, controla o desfoque do fundo e o foco do sujeito.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Bokeh</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Qualidade estética do desfoque em áreas fora de foco (luzes e destaques).</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Rim Lighting</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Luz de recorte que contorna o sujeito, criando destaque na borda.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Volumetric Light</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Raios de luz visíveis no ar por partículas, criando profundidade atmosférica.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Color Grading</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Ajuste de cores e contrastes para criar um mood/estética específica.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Gimbal</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Suporte estabilizador para movimentos suaves de câmera.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Parallax</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Efeito de profundidade quando planos se movem em velocidades diferentes.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Aspect Ratio</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Proporção entre largura e altura (ex.: 16:9, 4:5, 1:1, 9:16).</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">HDR</td><td class="px-4 py-2 text-[#92b7c9] text-sm">High Dynamic Range, amplia detalhes em áreas claras e escuras.</td></tr>
-                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm"> LUT</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Look-Up Table, preset de colorização para vídeos.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">DOF (Depth of Field)</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Controls how much of the background is blurred versus in focus.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Bokeh</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Aesthetic quality of the out-of-focus blur (lights and highlights).</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Rim Lighting</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Edge light outlining the subject, creating a bright contour.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Volumetric Light</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Visible light rays through particles, adding atmospheric depth.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Color Grading</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Adjusting colors and contrasts to create a specific mood/aesthetic.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Gimbal</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Stabilizing support for smooth camera movements.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Parallax</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Depth effect when layers move at different speeds.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">Aspect Ratio</td><td class="px-4 py-2 text-[#92b7c9] text-sm">The proportion between width and height (e.g., 16:9, 4:5, 1:1, 9:16).</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">HDR</td><td class="px-4 py-2 text-[#92b7c9] text-sm">High Dynamic Range, expands detail in bright and dark areas.</td></tr>
+                      <tr class="border-t border-t-[#325567]"><td class="px-4 py-2 text-white text-sm">LUT</td><td class="px-4 py-2 text-[#92b7c9] text-sm">Look-Up Table, a color grading preset for videos.</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -708,34 +725,28 @@
                 <span class="truncate">Clear All</span>
               </button>
             </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Exemplos de Prompts Profissionais</h2>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Professional Prompt Examples</h2>
             <div class="p-4">
               <div class="flex items-stretch gap-4 rounded-lg">
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-white text-base font-bold leading-tight">Prompt de imagem: Retrato profissional</p>
-                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
-                    "Foto profissional de uma empresária confiante, iluminação natural, foco nítido, fundo de estúdio limpo, fotorrealista, alto nível de detalhes, qualidade 4K"
-                  </p>
+                  <p class="text-white text-base font-bold leading-tight">Image prompt: Professional portrait</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">"Professional photo of a confident businesswoman, natural lighting, sharp focus, clean studio background, photorealistic, high detail, 4K quality"</p>
                 </div>
               </div>
             </div>
             <div class="p-4">
               <div class="flex items-stretch gap-4 rounded-lg">
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-white text-base font-bold leading-tight">Prompt de vídeo: Paisagem urbana cinematográfica</p>
-                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
-                    Crie uma paisagem urbana cinematográfica à noite, com luzes de neon refletindo em ruas molhadas, com uma figura solitária caminhando sob um poste de luz. Use palavras-chave como "noite", "paisagem urbana", "luzes de neon", "ruas molhadas", "poste de luz", "iluminação cinematográfica".
-                  </p>
+                  <p class="text-white text-base font-bold leading-tight">Video prompt: Cinematic urban landscape</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">Create a cinematic cityscape at night, neon lights reflecting on wet streets, with a lone figure walking under a streetlight. Use keywords like "night", "cityscape", "neon lights", "wet streets", "streetlight", "cinematic lighting".</p>
                 </div>
               </div>
             </div>
             <div class="p-4">
               <div class="flex items-stretch gap-4 rounded-lg">
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-white text-base font-bold leading-tight">Prompt de imagem: Arte digital de fantasia</p>
-                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">
-                    "Arte digital de um dragão majestoso pairando sobre uma floresta mística, iluminação etérea, paisagem de fantasia, escalas detalhadas, atmosfera mágica, qualidade premiada"
-                  </p>
+                  <p class="text-white text-base font-bold leading-tight">Image prompt: Fantasy digital art</p>
+                  <p class="text-[#92b7c9] text-sm font-normal leading-normal">"Digital art of a majestic dragon hovering over a mystical forest, ethereal lighting, fantasy landscape, detailed scales, magical atmosphere, award-winning quality"</p>
                 </div>
               </div>
             </div>
@@ -851,7 +862,7 @@
               </div>
             </div>
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Community Prompts</h2>
-            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">Explore prompts submitted by our community members and share your own successful examples.</p>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">Explore prompts submitted by community members and share your own successful examples.</p>
             <div class="p-4">
               <div class="flex items-stretch gap-4 rounded-lg">
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">
@@ -919,7 +930,7 @@
             <div class="flex px-4 py-3 justify-center">
               <a href="mailto:willian@goat.dev.br" class="flex items-center gap-2 px-4 py-3 rounded-lg bg-[#1193d4] text-white font-semibold hover:bg-[#0d7db0] transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm-8,32v3.56l-79.13,57.7a8,8,0,0,1-9.74,0L48,83.56V80ZM32,192V96.39l80.43,58.67a24,24,0,0,0,28.74,0L224,96.39V192Z"></path></svg>
-                <span>Fale comigo</span>
+                <span>Contact me</span>
               </a>
             </div>
           </div>
@@ -1166,115 +1177,142 @@
 
         // Append one-line example prompts to style sections
         appendStyleExamples();
+
+        // Show PT-BR notice modal once unless user opted out
+        try {
+          const dismissed = localStorage.getItem('ptbr_notice_dismissed');
+          if (!dismissed) {
+            const modal = document.getElementById('ptbr-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            const closeBtn = document.getElementById('ptbr-close');
+            const hideChk = document.getElementById('ptbr-hide');
+            function closeModal(){
+              if (hideChk.checked) {
+                localStorage.setItem('ptbr_notice_dismissed', '1');
+              }
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+            }
+            closeBtn.addEventListener('click', closeModal);
+            // Close when clicking outside the dialog
+            modal.addEventListener('click', (e)=>{
+              if (e.target === modal) closeModal();
+            });
+          }
+        } catch(err) {
+          // Ignore storage errors
+          console.warn('Modal storage unavailable', err);
+        }
       });
 
-      // Append example lines to styles (Foto, Arte, Digital, 3D, Cena)
+      // Append example lines to styles (Photo, Art, Digital, 3D, Scene)
       function appendStyleExamples(){
         const map = {
-          // Estilos de Foto
-          'Preto e branco': 'Exemplo: retrato P&B de alto contraste, luz lateral dramática, textura de pele, granulação sutil.',
-          'Close': 'Exemplo: macro de tecido com textura rica, fundo suave desfocado, iluminação difusa.',
-          'Publicidade - testemunho': 'Exemplo: cliente segurando o produto, sorriso natural, fundo neutro, texto de depoimento.',
-          'Cyberpunk': 'Exemplo: retrato urbano neon, chuva leve, reflexos em rua molhada, atmosfera futurista.',
-          'Olho de peixe': 'Exemplo: hall amplo com distorção olho de peixe, perspectiva ultra larga, linhas curvas.',
-          'Foto de estúdio': 'Exemplo: produto em fundo infinito, softbox principal e luz de recorte, recorte limpo.',
-          'Colódio úmido': 'Exemplo: retrato vintage com vinheta, textura de placa, tons sépia e pequenos defeitos.',
-          'Desfoque de movimento': 'Exemplo: corredor com motion blur propositado, trilhas de luz, sensação de velocidade.',
-          'Foto instantânea': 'Exemplo: retrato polaroid com borda branca, cores quentes e aparência retrô.',
-          'Retrato mal-humorado': 'Exemplo: retrato low-key, sombras profundas, expressão séria, luz recortada.',
-          'Retrato ousado': 'Exemplo: cores saturadas, luz dura, pose expressiva, contraste alto.',
-          'Ação na água': 'Exemplo: surfista em manobra, spray de água congelado, céu azul e luz forte.',
-          'Pôr do sol': 'Exemplo: silhueta ao pôr do sol, luz dourada, céu em degradê, atmosfera nostálgica.',
-          'Produto brutalista': 'Exemplo: produto sobre concreto bruto, luz dura lateral, formas geométricas.',
-          'Produto de verão': 'Exemplo: óculos de sol em cenário praiano, paleta quente, luz solar intensa.',
-          'Publicidade - produto': 'Exemplo: close do recurso principal, composição clara, iluminação de destaque.',
-          'Produto náutico': 'Exemplo: relógio em deck de barco, gotas d’água, aço escovado, tons marítimos.',
-          'Publicidade - pódio': 'Exemplo: perfume em pódio iluminado, fundo escuro, feixe de luz dirigido.',
-          'Emoldurado': 'Exemplo: foto com borda visível, passe-partout branco, aparência de moldura.',
-          'Hieróglifo': 'Exemplo: padrão gráfico estilo hieróglifo, símbolos egípcios e textura de pedra.',
+          // Photo Styles
+          'Black and white': 'Example: high-contrast B&W portrait, dramatic side light, skin texture, subtle grain.',
+          'Close-up': 'Example: macro of rich fabric texture, soft defocused background, diffused lighting.',
+          'Testimonial ad': 'Example: customer holding the product, natural smile, neutral background, testimonial text.',
+          'Cyberpunk': 'Example: neon urban portrait, light rain, reflections on wet street, futuristic atmosphere.',
+          'Fisheye': 'Example: wide hall with fisheye distortion, ultra-wide perspective, curved lines.',
+          'Studio photo': 'Example: product on seamless, main softbox and rim light, clean cutout.',
+          'Wet plate collodion': 'Example: vintage portrait with vignette, plate texture, sepia tones, minor flaws.',
+          'Motion blur': 'Example: runner with intentional motion blur, light trails, sense of speed.',
+          'Instant film': 'Example: polaroid-style portrait with white border, warm colors, retro look.',
+          'Moody portrait': 'Example: low-key portrait, deep shadows, serious expression, rim light.',
+          'Bold portrait': 'Example: saturated colors, hard light, expressive pose, high contrast.',
+          'Water action': 'Example: surfer mid-maneuver, frozen water spray, blue sky, strong light.',
+          'Sunset': 'Example: sunset silhouette, golden light, gradient sky, nostalgic atmosphere.',
+          'Brutalist product': 'Example: product on raw concrete, hard side light, geometric forms.',
+          'Summer product': 'Example: sunglasses in beach scene, warm palette, strong sunlight.',
+          'Product advertising': 'Example: close-up of key feature, clear composition, highlight lighting.',
+          'Nautical product': 'Example: watch on boat deck, water droplets, brushed steel, marine tones.',
+          'Podium advertising': 'Example: perfume on lit podium, dark background, directed light beam.',
+          'Framed': 'Example: photo with visible border, white mat, framed look.',
+          'Hieroglyph': 'Example: hieroglyph-style graphic pattern, Egyptian symbols, stone texture.',
 
-          // Estilos de Arte
-          'Aquarela': 'Exemplo: paisagem em aquarela, bordas suaves, bleeds de tinta, paleta pastel.',
-          'Desenho em tons pastéis': 'Exemplo: retrato em pastel seco, textura de papel, tons suaves e difusos.',
-          'Desenho animado': 'Exemplo: personagem cartoon colorido, contorno grosso, expressão exagerada.',
-          'Pintura em óleo': 'Exemplo: natureza morta com pincelada visível, iluminação clássica, cores ricas.',
-          'Esboço a lápis': 'Exemplo: estudo anatômico a lápis, hachuras visíveis, tom monocromático.',
-          'Colagem de papel': 'Exemplo: composição com recortes de papel, texturas variadas, camadas sobrepostas.',
-          'Arte de rua': 'Exemplo: mural grafite vibrante, stencil, textura urbana, mensagem social.',
-          'Psicodélico': 'Exemplo: espirais e padrões hipnóticos multicoloridos, estética anos 60.',
-          'Ukiyo-e': 'Exemplo: paisagem japonesa em xilogravura, linhas limpas, paleta tradicional.',
-          'Barroco': 'Exemplo: cena dramática com dourados, contraste intenso e ornamentos.',
-          'Livro de colorir': 'Exemplo: ilustração de contorno grosso com áreas amplas para colorir.',
-          'Pop art': 'Exemplo: retrato estilo pop art, halftone, cores primárias e contraste forte.',
-          'Art nouveau': 'Exemplo: figura com linhas orgânicas, motivos florais e molduras decorativas.',
-          'Anime': 'Exemplo: personagem anime, olhos grandes, paleta vibrante e fundo simples.',
-          'Mangá': 'Exemplo: cena P&B de mangá, quadros e onomatopeias, linhas de ação.',
-          'Antropomórfico': 'Exemplo: raposa de terno, expressão humana, pose confiante.',
-          'Boho vintage': 'Exemplo: composição boho vintage, tons terrosos, textura de filme.',
-          'Floral': 'Exemplo: arranjo floral detalhado, fundo claro, estética elegante.',
-          'Cubismo': 'Exemplo: retrato cubista fragmentado, múltiplas perspectivas, formas geométricas.',
-          'Arte em azulejo': 'Exemplo: padrão repetitivo tipo azulejo, motivos geométricos, cores saturadas.',
-          'Medieval': 'Exemplo: iluminura medieval, letras capitulares, douração simulada.',
-          'Surreal': 'Exemplo: relógios derretendo em deserto, luz onírica, contraste suave.',
-          'Álbum de rock': 'Exemplo: capa ousada com tipografia marcante e imagem impactante.',
-          'Ilustração infantil': 'Exemplo: cena infantil colorida, formas simples e clima alegre.',
-          'Retrato steampunk': 'Exemplo: retrato com engrenagens, óculos aviador e tons metálicos.',
-          'Expressionista': 'Exemplo: paisagem com pincelada agressiva e cores intensas.',
-          'Sinistro': 'Exemplo: cena sombria com névoa, silhuetas, atmosfera inquietante.',
-          'Desenho fantasioso': 'Exemplo: criatura fantástica lúdica, paleta vibrante, traço suave.',
-          'Mosaico': 'Exemplo: imagem composta por tesselas coloridas em padrão geométrico.',
+          // Art Styles
+          'Watercolor': 'Example: watercolor landscape, soft edges, paint bleeds, pastel palette.',
+          'Pastel drawing': 'Example: dry pastel portrait, paper texture, soft diffused tones.',
+          'Cartoon': 'Example: colorful cartoon character, thick outline, exaggerated expression.',
+          'Oil painting': 'Example: still life with visible brushwork, classic lighting, rich colors.',
+          'Pencil sketch': 'Example: anatomical pencil study, visible hatching, monochrome tone.',
+          'Paper collage': 'Example: composition with paper cutouts, varied textures, layered look.',
+          'Street art': 'Example: vibrant graffiti mural, stencil elements, urban texture, social message.',
+          'Psychedelic': 'Example: multicolor spirals and hypnotic patterns, 60s aesthetic.',
+          'Ukiyo-e': 'Example: Japanese woodblock landscape, clean lines, traditional palette.',
+          'Baroque': 'Example: dramatic scene with gold accents, intense contrast and ornamentation.',
+          'Coloring book': 'Example: bold-outline illustration with wide areas for coloring.',
+          'Pop art': 'Example: pop art portrait, halftone pattern, primary colors, strong contrast.',
+          'Art nouveau': 'Example: figure with organic lines, floral motifs and decorative frames.',
+          'Anime': 'Example: anime character, large expressive eyes, vibrant palette, simple background.',
+          'Manga': 'Example: B&W manga scene, panels and onomatopoeia, action lines.',
+          'Anthropomorphic': 'Example: fox in a suit, human-like expression, confident pose.',
+          'Boho vintage': 'Example: boho vintage composition, earthy tones, film texture.',
+          'Floral': 'Example: detailed floral arrangement, light background, elegant aesthetic.',
+          'Cubism': 'Example: fragmented cubist portrait, multiple perspectives, geometric shapes.',
+          'Tile art': 'Example: repetitive tile-like pattern, geometric motifs, saturated colors.',
+          'Medieval': 'Example: medieval illumination, drop caps, simulated gilding.',
+          'Surreal': 'Example: melting clocks in a desert, dreamlike light, soft contrast.',
+          'Rock album cover': 'Example: bold cover with striking typography and impactful image.',
+          "Children's illustration": 'Example: colorful kids scene, simple shapes, cheerful mood.',
+          'Steampunk portrait': 'Example: portrait with gears, aviator goggles and metallic tones.',
+          'Expressionist': 'Example: landscape with aggressive brushwork and intense colors.',
+          'Sinister': 'Example: dark scene with fog, silhouettes, unsettling atmosphere.',
+          'Whimsical drawing': 'Example: playful fantasy creature, vibrant palette, soft lines.',
+          'Mosaic': 'Example: image made of colored tesserae in geometric pattern.',
 
-          // Estilos de Digital
-          'Pixel Art': 'Exemplo: personagem 16-bit, paleta limitada, fundo isométrico simples.',
-          'Ilustração de blog': 'Exemplo: ilustração flat sobre produtividade, paleta suave.',
-          'Ícone de aplicativo': 'Exemplo: ícone minimalista com bordas arredondadas e alto contraste.',
-          'Adesivo fofo': 'Exemplo: sticker de gato fofo, traço grosso e sombra leve.',
-          'Design simples': 'Exemplo: ilustração minimalista monocromática com formas básicas.',
-          'Vinheta vetorial': 'Exemplo: vinheta com moldura ornamental e tema central.',
-          'Figurinha em linhas': 'Exemplo: rosto em linha contínua, traço único e fundo neutro.',
-          'Papercraft': 'Exemplo: animal em papercraft 3D, dobras nítidas e sombras suaves.',
-          'Futurista': 'Exemplo: interface HUD futurista, neon ciano/magenta, linhas finas.',
-          'Tinta espalhada': 'Exemplo: splash de tinta vibrante com respingos dinâmicos.',
-          'Arte com linhas mínimas': 'Exemplo: perfil humano com uma única linha e espaço negativo.',
-          'Emoji': 'Exemplo: emoji sorridente expressivo, formas simples e brilho sutil.',
-          'Tiki': 'Exemplo: máscara tiki estilizada, textura de madeira e cores tropicais.',
-          'Vitral': 'Exemplo: vitral florido, contornos de chumbo e cores translúcidas.',
-          'Tropical': 'Exemplo: folhas monstera com cores saturadas e luz quente.',
-          'Punk': 'Exemplo: colagem punk com spray, tipografia recortada e tons escuros.',
-          'Avatar de neon': 'Exemplo: avatar com outline neon, gradiente vibrante e fundo escuro.',
-          'Logotipo de esportes': 'Exemplo: logo de time felino, tipografia bold e formas dinâmicas.',
+          // Digital Styles
+          'Pixel art': 'Example: 16-bit character, limited palette, simple isometric background.',
+          'Blog illustration': 'Example: flat illustration about productivity, soft palette.',
+          'App icon': 'Example: minimalist icon with rounded edges and high contrast.',
+          'Cute sticker': 'Example: cute cat sticker, thick stroke and light shadow.',
+          'Simple design': 'Example: monochrome minimalist illustration with basic shapes.',
+          'Vector vignette': 'Example: vignette with ornamental frame and central theme.',
+          'Line sticker': 'Example: continuous-line face, single stroke, neutral background.',
+          'Papercraft': 'Example: 3D papercraft animal, crisp folds and soft shadows.',
+          'Futuristic': 'Example: futuristic HUD interface, cyan/magenta neon, fine lines.',
+          'Paint splatter': 'Example: vibrant paint splash with dynamic droplets.',
+          'Minimal line art': 'Example: human profile in a single line with negative space.',
+          'Emoji': 'Example: expressive smiling emoji, simple shapes, subtle shine.',
+          'Tiki': 'Example: stylized tiki mask, wood texture and tropical colors.',
+          'Stained glass': 'Example: floral stained glass, lead outlines and translucent colors.',
+          'Tropical': 'Example: monstera leaves with saturated colors and warm light.',
+          'Punk': 'Example: punk collage with spray paint, cut-out type and dark tones.',
+          'Neon avatar': 'Example: avatar with neon outline, vibrant gradient and dark background.',
+          'Sports logo': 'Example: feline team logo, bold type, dynamic shapes.',
 
-          // Estilos de 3D
-          'Isométrico fofo': 'Exemplo: pequena cidade isométrica fofa com cores pastéis.',
-          'Neon': 'Exemplo: objeto 3D com emissivo neon em fundo escuro.',
-          'Lowpoly': 'Exemplo: montanha lowpoly, paleta limitada e sombreamento flat.',
-          'Metálico': 'Exemplo: esfera metálica reflexiva com HDRI e microtextura.',
-          'Personagem fofo': 'Exemplo: personagem 3D chibi, olhos grandes e material soft.',
-          'Avatar fofo': 'Exemplo: avatar 3D fofo com expressão alegre e fundo simples.',
-          'Origami': 'Exemplo: pássaro estilo origami 3D com dobras definidas.',
-          'Mecha': 'Exemplo: robô mecha com placas, rig industrial e pose de ação.',
-          'Personagem animado': 'Exemplo: mascote estilizado, rig simples e pose dinâmica.',
-          'Modelo em argila': 'Exemplo: clay render matte com iluminação suave.',
-          'Escultura em madeira': 'Exemplo: busto esculpido em madeira com veios visíveis.',
-          'Balão pequeno': 'Exemplo: ícone 3D inflável minimalista com reflexão suave.',
-          'Escultura em pedra': 'Exemplo: estátua de pedra granulada com desgaste sutil.',
-          'Tijolos de plástico': 'Exemplo: carro de blocos plásticos, cores vivas e brilho ABS.',
-          'Fofinho': 'Exemplo: criatura peluda com grooming macio e SSS leve.',
-          'Mecha multicores': 'Exemplo: mecha colorido com painéis contrastantes e luz dramática.',
-          'Mítico': 'Exemplo: dragão 3D místico, neblina leve e luz etérea.',
+          // 3D Styles
+          'Cute isometric': 'Example: cute isometric town with pastel colors.',
+          'Neon': 'Example: 3D object with neon emissive on dark background.',
+          'Low poly': 'Example: low poly mountain, limited palette and flat shading.',
+          'Metallic': 'Example: reflective metal sphere with HDRI and microtexture.',
+          'Cute character': 'Example: chibi 3D character, big eyes and soft material.',
+          'Cute avatar': 'Example: cute 3D avatar with cheerful expression and simple background.',
+          'Origami': 'Example: 3D origami-style bird with defined folds.',
+          'Mecha': 'Example: mecha robot with plates, industrial rig and action pose.',
+          'Animated character': 'Example: stylized mascot, simple rig, dynamic pose.',
+          'Clay model': 'Example: matte clay render with soft lighting.',
+          'Wood sculpture': 'Example: wooden carved bust with visible grain.',
+          'Small balloon': 'Example: minimal inflatable 3D icon with soft reflection.',
+          'Stone sculpture': 'Example: grainy stone statue with subtle wear.',
+          'Plastic bricks': 'Example: plastic brick car, vivid colors and ABS shine.',
+          'Cuddly': 'Example: furry creature with soft grooming and light SSS.',
+          'Multicolor mecha': 'Example: colorful mecha with contrasting panels and dramatic light.',
+          'Mythic': 'Example: mystical 3D dragon, light fog and ethereal light.',
 
-          // Estilos de Cena
-          'Diorama em miniatura': 'Exemplo: diorama de cidadezinha com profundidade de campo.',
-          'Tóquio do futuro': 'Exemplo: rua futurista em Tóquio, neon, chuva e multidão.',
-          'Moda na cidade': 'Exemplo: editorial de moda urbana, luz dura e tons frios.',
-          'Cena de inverno': 'Exemplo: parque nevado à noite com luz quente de janela.',
-          'Vida no campo': 'Exemplo: fazenda ao pôr do sol, tons terrosos e calma.',
-          'Cozinha da cidade': 'Exemplo: cozinha moderna minimalista com under-cabinet lights.',
-          'Quarto de pelúcia': 'Exemplo: quarto com tecidos macios, paleta neutra e luz suave.',
-          'Supermercado': 'Exemplo: corredor organizado com foco em prateleiras e produtos.',
-          'Casa luxuosa à beira-mar': 'Exemplo: varanda com vista para o mar, linhas clean e vidro.',
-          'Vida colorida': 'Exemplo: sala vibrante com contrastes de cor e decoração alegre.',
-          'Campo de trigo': 'Exemplo: campo de trigo ao vento, céu dramático e profundidade.'
+          // Scene Styles
+          'Miniature diorama': 'Example: tiny town diorama with depth of field.',
+          'Future Tokyo': 'Example: futuristic Tokyo street, neon, rain and crowd.',
+          'City fashion': 'Example: urban fashion editorial, hard light and cool tones.',
+          'Winter scene': 'Example: snowy park at night with warm window light.',
+          'Countryside life': 'Example: farm at sunset, earthy tones and calm mood.',
+          'City kitchen': 'Example: modern minimalist kitchen with under-cabinet lights.',
+          'Plush bedroom': 'Example: room with soft fabrics, neutral palette and soft light.',
+          'Supermarket': 'Example: organized aisle focusing on shelves and products.',
+          'Luxurious seaside house': 'Example: balcony overlooking the sea, clean lines and glass.',
+          'Colorful life': 'Example: vibrant living room with color contrasts and cheerful decor.',
+          'Wheat field': 'Example: wheat field in the wind, dramatic sky and depth.'
         };
 
         const sections = ['estilos-foto','estilos-arte','estilos-digital','estilos-3d','estilos-cena'];
