@@ -65,15 +65,10 @@
 - Handheld
 - Aerial/Drone
 
-## 🌐 Live Demo
+## 🌐 Live
 
-Visit the live demo: [PromptCraft on GitHub Pages](https://w1llsystems.github.io/promptcraft)
+Visit the live: [PromptCraft on GitHub Pages](https://w1llsystems.github.io/promptcraft)
 
-## 🚀 Getting Started
-
-1. Clone this repository
-2. Open `code.html` in your browser
-3. Start creating professional prompts!
 
 ## 📝 License
 
@@ -90,7 +85,3 @@ Contributions are welcome! Feel free to:
 ## 📞 Support
 
 If you find this tool helpful, please give it a ⭐ on GitHub!
-
----
-
-**Made with ❤️ for the AI creative community**
