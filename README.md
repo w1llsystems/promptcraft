@@ -67,7 +67,7 @@
 
 ## 🌐 Live Demo
 
-Visit the live demo: [PromptCraft on GitHub Pages](https://your-username.github.io/promptcraft)
+Visit the live demo: [PromptCraft on GitHub Pages](https://w1llsystems.github.io/promptcraft)
 
 ## 🚀 Getting Started
 
