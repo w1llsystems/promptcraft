@@ -1163,7 +1163,137 @@
 
         // Initialize form
         updateFormFields();
+
+        // Append one-line example prompts to style sections
+        appendStyleExamples();
       });
+
+      // Append example lines to styles (Foto, Arte, Digital, 3D, Cena)
+      function appendStyleExamples(){
+        const map = {
+          // Estilos de Foto
+          'Preto e branco': 'Exemplo: retrato P&B de alto contraste, luz lateral dramática, textura de pele, granulação sutil.',
+          'Close': 'Exemplo: macro de tecido com textura rica, fundo suave desfocado, iluminação difusa.',
+          'Publicidade - testemunho': 'Exemplo: cliente segurando o produto, sorriso natural, fundo neutro, texto de depoimento.',
+          'Cyberpunk': 'Exemplo: retrato urbano neon, chuva leve, reflexos em rua molhada, atmosfera futurista.',
+          'Olho de peixe': 'Exemplo: hall amplo com distorção olho de peixe, perspectiva ultra larga, linhas curvas.',
+          'Foto de estúdio': 'Exemplo: produto em fundo infinito, softbox principal e luz de recorte, recorte limpo.',
+          'Colódio úmido': 'Exemplo: retrato vintage com vinheta, textura de placa, tons sépia e pequenos defeitos.',
+          'Desfoque de movimento': 'Exemplo: corredor com motion blur propositado, trilhas de luz, sensação de velocidade.',
+          'Foto instantânea': 'Exemplo: retrato polaroid com borda branca, cores quentes e aparência retrô.',
+          'Retrato mal-humorado': 'Exemplo: retrato low-key, sombras profundas, expressão séria, luz recortada.',
+          'Retrato ousado': 'Exemplo: cores saturadas, luz dura, pose expressiva, contraste alto.',
+          'Ação na água': 'Exemplo: surfista em manobra, spray de água congelado, céu azul e luz forte.',
+          'Pôr do sol': 'Exemplo: silhueta ao pôr do sol, luz dourada, céu em degradê, atmosfera nostálgica.',
+          'Produto brutalista': 'Exemplo: produto sobre concreto bruto, luz dura lateral, formas geométricas.',
+          'Produto de verão': 'Exemplo: óculos de sol em cenário praiano, paleta quente, luz solar intensa.',
+          'Publicidade - produto': 'Exemplo: close do recurso principal, composição clara, iluminação de destaque.',
+          'Produto náutico': 'Exemplo: relógio em deck de barco, gotas d’água, aço escovado, tons marítimos.',
+          'Publicidade - pódio': 'Exemplo: perfume em pódio iluminado, fundo escuro, feixe de luz dirigido.',
+          'Emoldurado': 'Exemplo: foto com borda visível, passe-partout branco, aparência de moldura.',
+          'Hieróglifo': 'Exemplo: padrão gráfico estilo hieróglifo, símbolos egípcios e textura de pedra.',
+
+          // Estilos de Arte
+          'Aquarela': 'Exemplo: paisagem em aquarela, bordas suaves, bleeds de tinta, paleta pastel.',
+          'Desenho em tons pastéis': 'Exemplo: retrato em pastel seco, textura de papel, tons suaves e difusos.',
+          'Desenho animado': 'Exemplo: personagem cartoon colorido, contorno grosso, expressão exagerada.',
+          'Pintura em óleo': 'Exemplo: natureza morta com pincelada visível, iluminação clássica, cores ricas.',
+          'Esboço a lápis': 'Exemplo: estudo anatômico a lápis, hachuras visíveis, tom monocromático.',
+          'Colagem de papel': 'Exemplo: composição com recortes de papel, texturas variadas, camadas sobrepostas.',
+          'Arte de rua': 'Exemplo: mural grafite vibrante, stencil, textura urbana, mensagem social.',
+          'Psicodélico': 'Exemplo: espirais e padrões hipnóticos multicoloridos, estética anos 60.',
+          'Ukiyo-e': 'Exemplo: paisagem japonesa em xilogravura, linhas limpas, paleta tradicional.',
+          'Barroco': 'Exemplo: cena dramática com dourados, contraste intenso e ornamentos.',
+          'Livro de colorir': 'Exemplo: ilustração de contorno grosso com áreas amplas para colorir.',
+          'Pop art': 'Exemplo: retrato estilo pop art, halftone, cores primárias e contraste forte.',
+          'Art nouveau': 'Exemplo: figura com linhas orgânicas, motivos florais e molduras decorativas.',
+          'Anime': 'Exemplo: personagem anime, olhos grandes, paleta vibrante e fundo simples.',
+          'Mangá': 'Exemplo: cena P&B de mangá, quadros e onomatopeias, linhas de ação.',
+          'Antropomórfico': 'Exemplo: raposa de terno, expressão humana, pose confiante.',
+          'Boho vintage': 'Exemplo: composição boho vintage, tons terrosos, textura de filme.',
+          'Floral': 'Exemplo: arranjo floral detalhado, fundo claro, estética elegante.',
+          'Cubismo': 'Exemplo: retrato cubista fragmentado, múltiplas perspectivas, formas geométricas.',
+          'Arte em azulejo': 'Exemplo: padrão repetitivo tipo azulejo, motivos geométricos, cores saturadas.',
+          'Medieval': 'Exemplo: iluminura medieval, letras capitulares, douração simulada.',
+          'Surreal': 'Exemplo: relógios derretendo em deserto, luz onírica, contraste suave.',
+          'Álbum de rock': 'Exemplo: capa ousada com tipografia marcante e imagem impactante.',
+          'Ilustração infantil': 'Exemplo: cena infantil colorida, formas simples e clima alegre.',
+          'Retrato steampunk': 'Exemplo: retrato com engrenagens, óculos aviador e tons metálicos.',
+          'Expressionista': 'Exemplo: paisagem com pincelada agressiva e cores intensas.',
+          'Sinistro': 'Exemplo: cena sombria com névoa, silhuetas, atmosfera inquietante.',
+          'Desenho fantasioso': 'Exemplo: criatura fantástica lúdica, paleta vibrante, traço suave.',
+          'Mosaico': 'Exemplo: imagem composta por tesselas coloridas em padrão geométrico.',
+
+          // Estilos de Digital
+          'Pixel Art': 'Exemplo: personagem 16-bit, paleta limitada, fundo isométrico simples.',
+          'Ilustração de blog': 'Exemplo: ilustração flat sobre produtividade, paleta suave.',
+          'Ícone de aplicativo': 'Exemplo: ícone minimalista com bordas arredondadas e alto contraste.',
+          'Adesivo fofo': 'Exemplo: sticker de gato fofo, traço grosso e sombra leve.',
+          'Design simples': 'Exemplo: ilustração minimalista monocromática com formas básicas.',
+          'Vinheta vetorial': 'Exemplo: vinheta com moldura ornamental e tema central.',
+          'Figurinha em linhas': 'Exemplo: rosto em linha contínua, traço único e fundo neutro.',
+          'Papercraft': 'Exemplo: animal em papercraft 3D, dobras nítidas e sombras suaves.',
+          'Futurista': 'Exemplo: interface HUD futurista, neon ciano/magenta, linhas finas.',
+          'Tinta espalhada': 'Exemplo: splash de tinta vibrante com respingos dinâmicos.',
+          'Arte com linhas mínimas': 'Exemplo: perfil humano com uma única linha e espaço negativo.',
+          'Emoji': 'Exemplo: emoji sorridente expressivo, formas simples e brilho sutil.',
+          'Tiki': 'Exemplo: máscara tiki estilizada, textura de madeira e cores tropicais.',
+          'Vitral': 'Exemplo: vitral florido, contornos de chumbo e cores translúcidas.',
+          'Tropical': 'Exemplo: folhas monstera com cores saturadas e luz quente.',
+          'Punk': 'Exemplo: colagem punk com spray, tipografia recortada e tons escuros.',
+          'Avatar de neon': 'Exemplo: avatar com outline neon, gradiente vibrante e fundo escuro.',
+          'Logotipo de esportes': 'Exemplo: logo de time felino, tipografia bold e formas dinâmicas.',
+
+          // Estilos de 3D
+          'Isométrico fofo': 'Exemplo: pequena cidade isométrica fofa com cores pastéis.',
+          'Neon': 'Exemplo: objeto 3D com emissivo neon em fundo escuro.',
+          'Lowpoly': 'Exemplo: montanha lowpoly, paleta limitada e sombreamento flat.',
+          'Metálico': 'Exemplo: esfera metálica reflexiva com HDRI e microtextura.',
+          'Personagem fofo': 'Exemplo: personagem 3D chibi, olhos grandes e material soft.',
+          'Avatar fofo': 'Exemplo: avatar 3D fofo com expressão alegre e fundo simples.',
+          'Origami': 'Exemplo: pássaro estilo origami 3D com dobras definidas.',
+          'Mecha': 'Exemplo: robô mecha com placas, rig industrial e pose de ação.',
+          'Personagem animado': 'Exemplo: mascote estilizado, rig simples e pose dinâmica.',
+          'Modelo em argila': 'Exemplo: clay render matte com iluminação suave.',
+          'Escultura em madeira': 'Exemplo: busto esculpido em madeira com veios visíveis.',
+          'Balão pequeno': 'Exemplo: ícone 3D inflável minimalista com reflexão suave.',
+          'Escultura em pedra': 'Exemplo: estátua de pedra granulada com desgaste sutil.',
+          'Tijolos de plástico': 'Exemplo: carro de blocos plásticos, cores vivas e brilho ABS.',
+          'Fofinho': 'Exemplo: criatura peluda com grooming macio e SSS leve.',
+          'Mecha multicores': 'Exemplo: mecha colorido com painéis contrastantes e luz dramática.',
+          'Mítico': 'Exemplo: dragão 3D místico, neblina leve e luz etérea.',
+
+          // Estilos de Cena
+          'Diorama em miniatura': 'Exemplo: diorama de cidadezinha com profundidade de campo.',
+          'Tóquio do futuro': 'Exemplo: rua futurista em Tóquio, neon, chuva e multidão.',
+          'Moda na cidade': 'Exemplo: editorial de moda urbana, luz dura e tons frios.',
+          'Cena de inverno': 'Exemplo: parque nevado à noite com luz quente de janela.',
+          'Vida no campo': 'Exemplo: fazenda ao pôr do sol, tons terrosos e calma.',
+          'Cozinha da cidade': 'Exemplo: cozinha moderna minimalista com under-cabinet lights.',
+          'Quarto de pelúcia': 'Exemplo: quarto com tecidos macios, paleta neutra e luz suave.',
+          'Supermercado': 'Exemplo: corredor organizado com foco em prateleiras e produtos.',
+          'Casa luxuosa à beira-mar': 'Exemplo: varanda com vista para o mar, linhas clean e vidro.',
+          'Vida colorida': 'Exemplo: sala vibrante com contrastes de cor e decoração alegre.',
+          'Campo de trigo': 'Exemplo: campo de trigo ao vento, céu dramático e profundidade.'
+        };
+
+        const sections = ['estilos-foto','estilos-arte','estilos-digital','estilos-3d','estilos-cena'];
+        sections.forEach(id => {
+          const root = document.getElementById(id);
+          if (!root) return;
+          root.querySelectorAll('details').forEach(det => {
+            const sum = det.querySelector('summary');
+            const key = sum ? sum.textContent.trim() : '';
+            if (!key || !map[key]) return;
+            // Skip if already has an example line
+            if (det.querySelector('.example-line')) return;
+            const p = document.createElement('p');
+            p.className = 'example-line pt-2 text-xs text-[#b4ccd9] px-6 pb-4';
+            p.textContent = map[key];
+            det.appendChild(p);
+          });
+        });
+      }
     </script>
   </body>
 </html>
